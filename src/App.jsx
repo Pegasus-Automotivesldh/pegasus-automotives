@@ -6,7 +6,6 @@ import {
   MapPin,
   Menu,
   X,
-  ArrowUpRight,
   ShieldCheck,
   Compass,
   KeyRound,
@@ -15,21 +14,16 @@ import {
   Linkedin,
   Youtube,
   Car,
-  Gauge,
   Sparkles,
 } from "lucide-react";
 
 /* ---------------------------------------------------------------
-   PEGASUS AUTOMOTIVES — brand tokens
-   bg-void #0A0A0B | bg-panel #131315 | line #232326
-   gold-600 #B4892C | gold-400 #D8B45E | gold-200 #F0DFAE
-   ivory #F4F2EC | ash #9A98A0
+   PEGASUS AUTOMOTIVES — Brand Tokens & Global Styles
 --------------------------------------------------------------- */
-
 const FONT_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
-  .pa-root{
+  .pa-root {
     --void:#0A0A0B; --panel:#131315; --panel2:#18181B; --line:#28282C;
     --gold-600:#B4892C; --gold-500:#C9A227; --gold-400:#D8B45E; --gold-200:#F0DFAE;
     --ivory:#F4F2EC; --ash:#98969E; --ash-dim:#6B6970;
@@ -43,7 +37,6 @@ const FONT_STYLES = `
     background:linear-gradient(120deg,var(--gold-600),var(--gold-200) 45%,var(--gold-500));
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
-  .pa-hairline{ background:linear-gradient(90deg,transparent,var(--line) 20%,var(--line) 80%,transparent); height:1px; }
   .pa-card{ background:var(--panel); border:1px solid var(--line); transition:border-color .4s ease, transform .4s ease, box-shadow .4s ease; }
   .pa-card:hover{ border-color:var(--gold-600); transform:translateY(-4px); box-shadow:0 20px 60px -20px rgba(180,137,44,0.25); }
   .pa-btn-gold{
@@ -54,7 +47,6 @@ const FONT_STYLES = `
   .pa-btn-ghost{ border:1px solid var(--line); color:var(--ivory); transition:border-color .3s ease, background .3s ease; }
   .pa-btn-ghost:hover{ border-color:var(--gold-500); background:rgba(201,162,39,0.06); }
   .pa-focus:focus{ outline:none; border-color:var(--gold-500); box-shadow:0 0 0 3px rgba(201,162,39,0.15); }
-  .pa-dashed{ border:1px dashed var(--line); }
   ::selection{ background:var(--gold-500); color:#161208; }
 `;
 
@@ -89,10 +81,19 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        {/* LOGO */}
         <a href="#" className="flex items-center gap-3 group">
-          <span className="f-display text-xl font-bold tracking-wider uppercase text-white group-hover:text-[#D8B45E] transition-colors">
-            Pegasus
-          </span>
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D8B45E] to-[#B4892C] flex items-center justify-center text-[#0A0A0B] shadow-lg group-hover:scale-105 transition-transform">
+            <Car size={22} className="stroke-[2.5]" />
+          </div>
+          <div className="flex flex-col">
+            <span className="f-display text-lg font-bold tracking-wider uppercase text-white group-hover:text-[#D8B45E] transition-colors leading-none">
+              Pegasus
+            </span>
+            <span className="f-mono text-[9px] tracking-[0.25em] text-[#98969E] uppercase">
+              Automotives
+            </span>
+          </div>
         </a>
 
         {/* Desktop Nav */}
@@ -159,7 +160,7 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-24 pb-16 px-6 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-[#0A0A0B]/50 to-[#0A0A0B]" />
-      
+
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -411,9 +412,16 @@ function Testimonials() {
 }
 
 /* ---------------------------------------------------------------
-   CONTACT
+   CONTACT & SOCIAL LINKS
 --------------------------------------------------------------- */
 function Contact() {
+  const socialLinks = [
+    { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  ];
+
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -423,21 +431,46 @@ function Contact() {
           <p className="text-[#98969E] text-sm mb-8 font-light leading-relaxed">
             Reach out to schedule a private viewing or discuss your automotive requirements.
           </p>
-          <div className="space-y-4">
-            <div className="flex items-center gap-4 text-sm text-[#98969E]">
+          
+          {/* Contact Details */}
+          <div className="space-y-4 mb-8">
+            <a href="tel:+15550000000" className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors">
               <Phone size={18} className="text-[#D8B45E]" />
               <span>+1 (555) 000-0000</span>
-            </div>
-            <div className="flex items-center gap-4 text-sm text-[#98969E]">
+            </a>
+            <a href="mailto:contact@pegasusautomotives.com" className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors">
               <Mail size={18} className="text-[#D8B45E]" />
-              <span>info@pegasusautomotives.com</span>
-            </div>
+              <span>contact@pegasusautomotives.com</span>
+            </a>
             <div className="flex items-center gap-4 text-sm text-[#98969E]">
               <MapPin size={18} className="text-[#D8B45E]" />
               <span>100 Luxury Way, Automotive District</span>
             </div>
           </div>
+
+          {/* Social Links */}
+          <div>
+            <p className="f-mono text-xs tracking-wider uppercase mb-3 text-[#98969E]">Follow Our Journey</p>
+            <div className="flex items-center gap-3">
+              {socialLinks.map((s, idx) => {
+                const Icon = s.icon;
+                return (
+                  <a
+                    key={idx}
+                    href={s.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={s.label}
+                    className="w-10 h-10 rounded-lg border border-[#28282C] bg-[#131315] flex items-center justify-center text-[#98969E] hover:text-[#D8B45E] hover:border-[#D8B45E] transition-all"
+                  >
+                    <Icon size={18} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
         </div>
+
         <form className="space-y-4 pa-card p-8 rounded-2xl" onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
@@ -468,8 +501,14 @@ function Contact() {
 --------------------------------------------------------------- */
 function Footer() {
   return (
-    <footer className="border-t border-[#28282C] py-8 text-center text-xs text-[#98969E]">
-      <p>&copy; {new Date().getFullYear()} Pegasus Automotives. All rights reserved.</p>
+    <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E]">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="flex items-center gap-2">
+          <Car size={16} className="text-[#D8B45E]" />
+          <span className="font-semibold text-[#F4F2EC]">PEGASUS AUTOMOTIVES</span>
+        </div>
+        <p>&copy; {new Date().getFullYear()} Pegasus Automotives. All rights reserved.</p>
+      </div>
     </footer>
   );
 }
