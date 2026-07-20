@@ -14,4 +14,4 @@ To run locally:
 - [Instagram](https://www.instagram.com/pegasus_automotivs/)
 - [LinkedIn](https://www.linkedin.com/company/pegasus-automotives)
 - [Facebook](https://www.facebook.com/PegasusAutomotives)
-- [YouTube](https://www.youtube.com/@pegsusautomotives)
+- [YouTube](https://www.youtube.com/@pegasusautomotives)
