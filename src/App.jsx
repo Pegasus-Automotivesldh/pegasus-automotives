@@ -87,18 +87,18 @@ function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#0A0A0B]/90 backdrop-blur-md py-3 border-b border-[#28282C]"
-          : "bg-transparent py-5"
+          ? "bg-[#0A0A0B]/90 backdrop-blur-md py-2 border-b border-[#28282C]"
+          : "bg-transparent py-4"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* CRISP HD LOGO */}
+        {/* LARGER PROMINENT LOGO */}
         <a href="#" className="group block">
-          <div className="w-12 h-12 rounded-xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 group-hover:border-[#D8B45E] transition-colors duration-300 shadow-sm">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 group-hover:border-[#D8B45E] transition-colors duration-300 shadow-lg">
             <img
               src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
               alt="Pegasus Automotives Logo"
-              className="w-full h-full object-contain rounded-lg pa-logo-img group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-full object-contain rounded-xl pa-logo-img group-hover:scale-105 transition-transform duration-300"
             />
           </div>
         </a>
@@ -175,7 +175,7 @@ function Navbar() {
 --------------------------------------------------------------- */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-28 pb-20 px-6 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#18181B]/40 via-[#0A0A0B] to-[#0A0A0B]" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
@@ -354,8 +354,16 @@ function WhyPegasus() {
    LUXURY GALLERY
 --------------------------------------------------------------- */
 const luxuryCars = [
-  { src: "/rr.jpg", title: "Rolls-Royce", category: "Ultra Luxury" },
-  { src: "/bmw.jpg", title: "BMW M Series", category: "High Performance" },
+  { 
+    src: "https://images.unsplash.com/photo-1631295868223-63265b40d9e4?auto=format&fit=crop&w=1200&q=80", 
+    title: "Rolls-Royce Ghost", 
+    category: "Ultra Luxury" 
+  },
+  { 
+    src: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80", 
+    title: "BMW M Series", 
+    category: "High Performance" 
+  },
 ];
 
 function LuxuryCarGallery() {
@@ -376,10 +384,11 @@ function LuxuryCarGallery() {
             key={index}
             className="group relative overflow-hidden rounded-2xl border transition-all duration-500 border-[#28282C] bg-[#131315]"
           >
-            <div className="h-96 overflow-hidden">
+            <div className="h-96 overflow-hidden bg-[#18181B]">
               <img
                 src={car.src}
                 alt={car.title}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -646,13 +655,13 @@ function Footer() {
   return (
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* CRISP HD FOOTER LOGO */}
+        {/* LARGER FOOTER LOGO */}
         <a href="#" className="block">
-          <div className="w-10 h-10 rounded-lg border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D8B45E] transition-colors duration-300">
+          <div className="w-16 h-16 rounded-xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D8B45E] transition-colors duration-300">
             <img
               src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
               alt="Pegasus Logo"
-              className="w-full h-full object-contain rounded pa-logo-img"
+              className="w-full h-full object-contain rounded-lg pa-logo-img"
             />
           </div>
         </a>
