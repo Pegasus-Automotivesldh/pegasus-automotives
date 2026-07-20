@@ -83,9 +83,11 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* LOGO */}
         <a href="#" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#D8B45E] to-[#B4892C] flex items-center justify-center text-[#0A0A0B] shadow-lg group-hover:scale-105 transition-transform">
-            <Car size={22} className="stroke-[2.5]" />
-          </div>
+          <img
+            src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
+            alt="Pegasus Automotives Logo"
+            className="h-10 w-10 object-cover rounded-lg group-hover:scale-105 transition-transform"
+          />
           <div className="flex flex-col">
             <span className="f-display text-lg font-bold tracking-wider uppercase text-white group-hover:text-[#D8B45E] transition-colors leading-none">
               Pegasus
@@ -434,17 +436,17 @@ function Contact() {
           
           {/* Contact Details */}
           <div className="space-y-4 mb-8">
-            <a href="tel:+15550000000" className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors">
+            <a href="tel:+919501462967" className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors">
               <Phone size={18} className="text-[#D8B45E]" />
-              <span>+1 (555) 000-0000</span>
+              <span>+91 95014 62967</span>
             </a>
-            <a href="mailto:contact@pegasusautomotives.com" className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors">
+            <a href="mailto:pegasusautomotivesldh@gmail.com" className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors">
               <Mail size={18} className="text-[#D8B45E]" />
-              <span>contact@pegasusautomotives.com</span>
+              <span>pegasusautomotivesldh@gmail.com</span>
             </a>
             <div className="flex items-center gap-4 text-sm text-[#98969E]">
               <MapPin size={18} className="text-[#D8B45E]" />
-              <span>100 Luxury Way, Automotive District</span>
+              <span>Ludhiana, Punjab, India</span>
             </div>
           </div>
 
@@ -504,7 +506,11 @@ function Footer() {
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <Car size={16} className="text-[#D8B45E]" />
+          <img
+            src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
+            alt="Pegasus Logo"
+            className="h-6 w-6 object-cover rounded"
+          />
           <span className="font-semibold text-[#F4F2EC]">PEGASUS AUTOMOTIVES</span>
         </div>
         <p>&copy; {new Date().getFullYear()} Pegasus Automotives. All rights reserved.</p>
