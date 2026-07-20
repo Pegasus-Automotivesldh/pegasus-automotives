@@ -17,6 +17,8 @@ import {
   Sparkles,
   CheckCircle2,
   ArrowUpRight,
+  Briefcase,
+  Building2,
 } from "lucide-react";
 
 /* ---------------------------------------------------------------
@@ -36,7 +38,6 @@ const FONT_STYLES = `
   .pa-root .f-display{ font-family:'Fraunces',serif; }
   .pa-root .f-mono{ font-family:'Space Mono',monospace; letter-spacing:0.14em; }
   
-  /* ULTRA-CLEAR HIGH DPI LOGO CLASS */
   .pa-logo-img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
@@ -75,8 +76,8 @@ function Navbar() {
   }, []);
 
   const navLinks = [
+    { label: "Advisory & Brokerage", href: "#services" },
     { label: "Inventory", href: "#inventory" },
-    { label: "Services", href: "#services" },
     { label: "Why Pegasus", href: "#why-pegasus" },
     { label: "Gallery", href: "#gallery" },
     { label: "Testimonials", href: "#testimonials" },
@@ -92,9 +93,9 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* LARGER PROMINENT LOGO */}
+        {/* EXTRA-LARGE HEADER LOGO */}
         <a href="#" className="group block">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 group-hover:border-[#D8B45E] transition-colors duration-300 shadow-lg">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 group-hover:border-[#D8B45E] transition-colors duration-300 shadow-2xl">
             <img
               src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
               alt="Pegasus Automotives Logo"
@@ -104,7 +105,7 @@ function Navbar() {
         </a>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
               key={link.label}
@@ -121,7 +122,7 @@ function Navbar() {
             href="#contact"
             className="pa-btn-gold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider font-bold inline-flex items-center gap-1 group"
           >
-            <span>Inquire Now</span>
+            <span>Consult Advisor</span>
             <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </a>
         </div>
@@ -160,7 +161,7 @@ function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="pa-btn-gold px-5 py-3 rounded-full text-xs uppercase tracking-wider font-bold text-center mt-2 flex items-center justify-center gap-2"
             >
-              <span>Inquire Now</span>
+              <span>Consult Advisor</span>
               <ArrowUpRight size={16} />
             </a>
           </motion.div>
@@ -175,29 +176,30 @@ function Navbar() {
 --------------------------------------------------------------- */
 function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center pt-36 pb-20 px-6 overflow-hidden">
       <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#18181B]/40 via-[#0A0A0B] to-[#0A0A0B]" />
 
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#28282C] bg-[#131315]/80 mb-6 backdrop-blur-sm"
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#28282C] bg-[#131315]/80 mb-6 backdrop-blur-sm"
         >
           <Sparkles size={12} className="text-[#D8B45E]" />
           <span className="f-mono text-[10px] tracking-[0.25em] uppercase text-[#D8B45E]">
-            Luxury Automotives & Performance
+            Premium Automotive Advisory & Brokerage
           </span>
         </motion.div>
 
+        {/* UPDATED HERO TITLE */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
-          className="f-display text-4xl sm:text-6xl md:text-7xl font-light tracking-tight mb-6 leading-tight"
+          className="f-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6 leading-tight max-w-4xl mx-auto"
         >
-          Redefining Automotive <br className="hidden sm:block" />
-          <span className="pa-gold-text italic font-normal">Excellence</span>
+          Black leather, polished chrome, and the{" "}
+          <span className="pa-gold-text italic font-normal">scent of a new drive.</span>
         </motion.h1>
 
         <motion.p
@@ -206,7 +208,7 @@ function Hero() {
           transition={{ delay: 0.2 }}
           className="text-[#98969E] max-w-2xl mx-auto text-base sm:text-lg mb-10 font-light leading-relaxed"
         >
-          A bespoke portfolio of the world's finest luxury and high-performance exotic vehicles. Tailored acquisition, consignment, and specialized care.
+          Elevating vehicle ownership through specialized luxury advisory, brand-new allocations, private brokerage, and curated exotic car acquisition.
         </motion.p>
 
         <motion.div
@@ -215,11 +217,11 @@ function Hero() {
           transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a href="#inventory" className="pa-btn-gold px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold w-full sm:w-auto">
-            View Inventory
+          <a href="#services" className="pa-btn-gold px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold w-full sm:w-auto">
+            Explore Brokerage Services
           </a>
           <a href="#contact" className="pa-btn-ghost px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold w-full sm:w-auto">
-            Book Private Consultation
+            Private Consultation
           </a>
         </motion.div>
       </div>
@@ -228,23 +230,23 @@ function Hero() {
 }
 
 /* ---------------------------------------------------------------
-   CREDIBILITY / STATS
+   CREDIBILITY / STATS (REPLACED WITH PROFESSIONAL ADVISORY HIGHLIGHTS)
 --------------------------------------------------------------- */
 function Credibility() {
-  const stats = [
-    { value: "500+", label: "Vehicles Delivered" },
-    { value: "100%", label: "Verified Provenance" },
-    { value: "15+", label: "Years Industry Experience" },
-    { value: "24/7", label: "Concierge Support" },
+  const highlights = [
+    { title: "Automotive Advisory", label: "New Build & Factory Allocations" },
+    { title: "Private Brokerage", label: "Discreet Off-Market Portfolio Sales" },
+    { title: "Bespoke Sourcing", label: "Global Exotic & Rare Vehicles" },
+    { title: "Concierge Care", label: "End-to-End Asset Management" },
   ];
 
   return (
     <section className="py-12 border-y border-[#28282C] bg-[#131315]/40 backdrop-blur-sm">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-        {stats.map((stat, i) => (
+        {highlights.map((item, i) => (
           <div key={i} className="flex flex-col items-center">
-            <div className="f-display text-3xl md:text-4xl font-light text-[#D8B45E] mb-1">{stat.value}</div>
-            <div className="f-mono text-[10px] uppercase tracking-widest text-[#98969E]">{stat.label}</div>
+            <div className="f-display text-lg sm:text-xl font-light text-[#D8B45E] mb-1">{item.title}</div>
+            <div className="f-mono text-[10px] uppercase tracking-wider text-[#98969E] max-w-[180px]">{item.label}</div>
           </div>
         ))}
       </div>
@@ -253,32 +255,32 @@ function Credibility() {
 }
 
 /* ---------------------------------------------------------------
-   SERVICES
+   SERVICES (UPDATED TO EMPHASIZE BROKERAGE & NEW CAR ADVISORY)
 --------------------------------------------------------------- */
 function Services() {
   const services = [
     {
-      icon: ShieldCheck,
-      title: "Consignment & Sales",
-      desc: "White-glove consignment services ensuring maximum valuation and global reach for your extraordinary automobile.",
+      icon: Briefcase,
+      title: "Luxury Advisory & Brokerage",
+      desc: "Beyond pre-owned sales, we act as specialized advisors for brand-new luxury builds, factory allocations, and high-value private car brokerage.",
     },
     {
       icon: Compass,
-      title: "Bespoke Sourcing",
-      desc: "Leveraging our private global collector network to locate rare, limited-edition, or specific build specifications.",
+      title: "Bespoke New & Rare Sourcing",
+      desc: "Leveraging exclusive private collector networks and global dealer relationships to secure coveted, limited-production, or custom-spec automobiles.",
     },
     {
-      icon: KeyRound,
-      title: "Private Detailing & Care",
-      desc: "Precision paint correction, multi-layer ceramic protection, and complete interior restoration services.",
+      icon: ShieldCheck,
+      title: "Consignment & Portfolio Management",
+      desc: "Discreet, white-glove consignment services ensuring maximum asset valuation and target market positioning for extraordinary luxury vehicles.",
     },
   ];
 
   return (
     <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Tailored Solutions</p>
-        <h2 className="f-display text-3xl md:text-5xl font-light">Bespoke Services</h2>
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Bespoke Offerings</p>
+        <h2 className="f-display text-3xl md:text-5xl font-light">Advisory & Brokerage</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -316,16 +318,16 @@ function WhyPegasus() {
     <section id="why-pegasus" className="py-24 px-6 bg-[#131315] border-y border-[#28282C]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">The Difference</p>
-          <h2 className="f-display text-3xl md:text-5xl font-light mb-6">Uncompromising Quality & Precision</h2>
+          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">The Pegasus Standard</p>
+          <h2 className="f-display text-3xl md:text-5xl font-light mb-6">Complete Automotive Advisory</h2>
           <p className="text-[#98969E] text-base leading-relaxed mb-6 font-light">
-            Every vehicle represented in our portfolio undergoes a rigorous multi-point structural, mechanical, and provenance audit prior to presentation.
+            We operate as your dedicated luxury automotive partner. Whether guiding brand-new luxury acquisition, brokerage transactions, or private collector sourcing, precision remains paramount.
           </p>
           <ul className="space-y-4 mb-8">
             {[
-              "Verified Vehicle History & Provenance",
-              "Transparent & Discreet Valuation",
-              "Flexible Financing & Trade-In Options",
+              "Brand-New Luxury & Pre-Owned Advisory",
+              "Private Brokerage & Portfolio Sourcing",
+              "Verified Provenance & Comprehensive Audits",
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-3 text-sm text-[#F4F2EC]">
                 <CheckCircle2 size={16} className="text-[#D8B45E] shrink-0" />
@@ -336,12 +338,12 @@ function WhyPegasus() {
         </div>
         <div className="pa-card rounded-2xl p-8 bg-[#0A0A0B] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#D8B45E]/5 rounded-full blur-3xl pointer-events-none" />
-          <h3 className="f-display text-2xl font-light mb-4">Private Consultation</h3>
+          <h3 className="f-display text-2xl font-light mb-4">Advisory Consultation</h3>
           <p className="text-sm text-[#98969E] mb-6 font-light leading-relaxed">
-            Connect directly with an expert advisor to discuss vehicle acquisitions, valuations, or customized consignment programs.
+            Connect directly with an executive advisor to discuss brand-new allocations, custom builds, private brokerage, or vehicle consignments.
           </p>
           <a href="#contact" className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-flex items-center gap-2">
-            <span>Schedule Meeting</span>
+            <span>Schedule Consultation</span>
             <ArrowUpRight size={14} />
           </a>
         </div>
@@ -423,17 +425,17 @@ function Inventory() {
   return (
     <section id="inventory" className="py-24 px-6 max-w-7xl mx-auto border-t border-[#28282C]">
       <div className="text-center mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Current Offerings</p>
-        <h2 className="f-display text-3xl md:text-5xl font-light">Showroom Selection</h2>
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Curated Listings</p>
+        <h2 className="f-display text-3xl md:text-5xl font-light">Showroom & Off-Market Portfolio</h2>
       </div>
       <div className="pa-card p-12 rounded-2xl text-center max-w-xl mx-auto">
         <Sparkles size={24} className="text-[#D8B45E] mx-auto mb-4" />
-        <p className="text-[#F4F2EC] text-base font-medium mb-2">Exclusive Inventory Catalog</p>
+        <p className="text-[#F4F2EC] text-base font-medium mb-2">Private Portfolio Access</p>
         <p className="text-[#98969E] text-xs font-light leading-relaxed mb-6">
-          Our current available showroom listings are available upon private request. Contact our sales team for full specifications and pricing.
+          Our brand-new allocations and off-market brokerage vehicles are kept private. Request direct consultation for full catalog access.
         </p>
         <a href="#contact" className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-block">
-          Request Private Catalog
+          Request Private Portfolio
         </a>
       </div>
     </section>
@@ -452,19 +454,19 @@ function Testimonials() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
           <div className="pa-card p-8 rounded-2xl">
             <p className="text-sm text-[#98969E] leading-relaxed mb-6 font-light italic">
-              "The sourcing process was completely seamless. Pegasus Automotive located the exact specification I requested within two weeks."
+              "Their brokerage team secured my new build allocation effortlessly. Pegasus provided an unparalleled executive advisory experience."
             </p>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-[#28282C] flex items-center justify-center font-bold text-xs text-[#D8B45E]">P</div>
               <div>
-                <div className="text-xs font-bold text-[#F4F2EC]">Private Collector</div>
+                <div className="text-xs font-bold text-[#F4F2EC]">Private Client</div>
                 <div className="f-mono text-[10px] text-[#98969E]">Ludhiana, India</div>
               </div>
             </div>
           </div>
           <div className="pa-card p-8 rounded-2xl">
             <p className="text-sm text-[#98969E] leading-relaxed mb-6 font-light italic">
-              "Unmatched professionalism and extreme attention to detail. Their consignment service exceeded my expectations."
+              "Unmatched professionalism in handling our private vehicle consignment and finding a custom luxury acquisition."
             </p>
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-[#28282C] flex items-center justify-center font-bold text-xs text-[#D8B45E]">A</div>
@@ -506,10 +508,9 @@ function Contact() {
           <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Get In Touch</p>
           <h2 className="f-display text-3xl md:text-5xl font-light mb-6">Contact Us</h2>
           <p className="text-[#98969E] text-sm mb-8 font-light leading-relaxed">
-            Reach out to discuss acquisitions, list a vehicle for consignment, or arrange a private viewing in our showroom.
+            Speak with an advisor regarding luxury acquisitions, new vehicle allocations, private brokerage, or showroom appointments.
           </p>
           
-          {/* Contact Details */}
           <div className="space-y-5 mb-10">
             <a
               href="tel:+919501462967"
@@ -563,7 +564,6 @@ function Contact() {
             </div>
           </div>
 
-          {/* Social Links */}
           <div>
             <p className="f-mono text-xs tracking-wider uppercase mb-4 text-[#98969E]">Connect With Us</p>
             <div className="flex items-center gap-3">
@@ -586,7 +586,6 @@ function Contact() {
           </div>
         </div>
 
-        {/* Form */}
         <div className="pa-card p-8 rounded-2xl relative">
           <h3 className="f-display text-2xl font-light mb-6">Send an Inquiry</h3>
           
@@ -631,7 +630,7 @@ function Contact() {
                 <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Message or Inquiry</label>
                 <textarea
                   required
-                  placeholder="Details regarding buying, selling, or sourcing..."
+                  placeholder="Details regarding luxury advisory, new build allocations, or brokerage..."
                   rows={4}
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
@@ -655,13 +654,13 @@ function Footer() {
   return (
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* LARGER FOOTER LOGO */}
+        {/* EXTRA-LARGE FOOTER LOGO */}
         <a href="#" className="block">
-          <div className="w-16 h-16 rounded-xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D8B45E] transition-colors duration-300">
+          <div className="w-20 h-20 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D8B45E] transition-colors duration-300">
             <img
               src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
               alt="Pegasus Logo"
-              className="w-full h-full object-contain rounded-lg pa-logo-img"
+              className="w-full h-full object-contain rounded-xl pa-logo-img"
             />
           </div>
         </a>
