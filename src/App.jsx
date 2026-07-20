@@ -35,6 +35,15 @@ const FONT_STYLES = `
   }
   .pa-root .f-display{ font-family:'Fraunces',serif; }
   .pa-root .f-mono{ font-family:'Space Mono',monospace; letter-spacing:0.14em; }
+  
+  /* ULTRA-CLEAR HIGH DPI LOGO CLASS */
+  .pa-logo-img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
   .pa-gold-text{
     background:linear-gradient(120deg,var(--gold-600),var(--gold-200) 45%,var(--gold-500));
     -webkit-background-clip:text; background-clip:text; color:transparent;
@@ -83,13 +92,15 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* LOGO ONLY (No text) */}
+        {/* CRISP HD LOGO */}
         <a href="#" className="group block">
-          <img
-            src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
-            alt="Pegasus Automotives Logo"
-            className="h-11 w-11 object-cover rounded-xl border border-[#28282C] group-hover:border-[#D8B45E] group-hover:scale-105 transition-all duration-300"
-          />
+          <div className="w-12 h-12 rounded-xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 group-hover:border-[#D8B45E] transition-colors duration-300 shadow-sm">
+            <img
+              src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
+              alt="Pegasus Automotives Logo"
+              className="w-full h-full object-contain rounded-lg pa-logo-img group-hover:scale-105 transition-transform duration-300"
+            />
+          </div>
         </a>
 
         {/* Desktop Nav */}
@@ -635,13 +646,15 @@ function Footer() {
   return (
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* LOGO ONLY (No text) */}
+        {/* CRISP HD FOOTER LOGO */}
         <a href="#" className="block">
-          <img
-            src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
-            alt="Pegasus Logo"
-            className="h-8 w-8 object-cover rounded-lg border border-[#28282C] hover:border-[#D8B45E] transition-colors"
-          />
+          <div className="w-10 h-10 rounded-lg border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D8B45E] transition-colors duration-300">
+            <img
+              src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
+              alt="Pegasus Logo"
+              className="w-full h-full object-contain rounded pa-logo-img"
+            />
+          </div>
         </a>
         <p>&copy; {new Date().getFullYear()} Pegasus Automotives. All rights reserved.</p>
       </div>
