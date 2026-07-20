@@ -626,11 +626,11 @@ function Contact() {
    Footer
 --------------------------------------------------------------- */
 function Footer() {
-  const social = [
-    { Icon: Instagram, label: "Instagram" },
-    { Icon: Facebook, label: "Facebook" },
-    { Icon: Linkedin, label: "LinkedIn" },
-    { Icon: Youtube, label: "YouTube" },
+const social = [
+    { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/pegasus_automotivs/" },
+    { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/PegasusAutomotives" },
+    { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/pegasus-automotives" },
+    { Icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@pegsusautomotives" },
   ];
   return (
     <footer className="px-6 md:px-10 pt-16 pb-8" style={{ borderTop: "1px solid var(--line)" }}>
@@ -652,17 +652,19 @@ function Footer() {
         </div>
 
         <div className="flex md:justify-end items-start gap-3">
-          {social.map(({ Icon, label }) => (
-            <a
-              key={label}
-              href="#"
-              aria-label={label}
-              className="w-10 h-10 rounded-full flex items-center justify-center"
-              style={{ border: "1px solid var(--line)" }}
-            >
-              <Icon size={15} style={{ color: "var(--ash)" }} />
-            </a>
-          ))}
+         {social.map(({ Icon, label, href }) => (
+  <a
+    key={label}
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label={label}
+    className="w-10 h-10 rounded-full flex items-center justify-center"
+    style={{ border: "1px solid var(--line)" }}
+  >
+    <Icon size={15} style={{ color: "var(--ash)" }} />
+  </a>
+))}
         </div>
       </div>
 
