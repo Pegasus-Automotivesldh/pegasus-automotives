@@ -18,7 +18,11 @@ import {
   CheckCircle2,
   ArrowUpRight,
   Briefcase,
-  Building2,
+  Wrench,
+  Award,
+  Clock,
+  Car,
+  ChevronRight
 } from "lucide-react";
 
 /* ---------------------------------------------------------------
@@ -77,7 +81,7 @@ function Navbar() {
 
   const navLinks = [
     { label: "Advisory & Brokerage", href: "#services" },
-    { label: "Inventory", href: "#inventory" },
+    { label: "Portfolio", href: "#inventory" },
     { label: "Why Pegasus", href: "#why-pegasus" },
     { label: "Gallery", href: "#gallery" },
     { label: "Testimonials", href: "#testimonials" },
@@ -93,7 +97,7 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* EXTRA-LARGE HEADER LOGO */}
+        {/* EXTRA-LARGE LOGO */}
         <a href="#" className="group block">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 group-hover:border-[#D8B45E] transition-colors duration-300 shadow-2xl">
             <img
@@ -191,7 +195,7 @@ function Hero() {
           </span>
         </motion.div>
 
-        {/* UPDATED HERO TITLE */}
+        {/* TAGLINE */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -208,7 +212,7 @@ function Hero() {
           transition={{ delay: 0.2 }}
           className="text-[#98969E] max-w-2xl mx-auto text-base sm:text-lg mb-10 font-light leading-relaxed"
         >
-          Elevating vehicle ownership through specialized luxury advisory, brand-new allocations, private brokerage, and curated exotic car acquisition.
+          Precision luxury advisory, brand-new factory allocations, private car brokerage, and bespoke automotive asset management.
         </motion.p>
 
         <motion.div
@@ -221,7 +225,7 @@ function Hero() {
             Explore Brokerage Services
           </a>
           <a href="#contact" className="pa-btn-ghost px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold w-full sm:w-auto">
-            Private Consultation
+            Book Private Consultation
           </a>
         </motion.div>
       </div>
@@ -230,14 +234,14 @@ function Hero() {
 }
 
 /* ---------------------------------------------------------------
-   CREDIBILITY / STATS (REPLACED WITH PROFESSIONAL ADVISORY HIGHLIGHTS)
+   CREDIBILITY & CORE BRAND PILLARS (DURABLE COLLABORATION)
 --------------------------------------------------------------- */
 function Credibility() {
   const highlights = [
-    { title: "Automotive Advisory", label: "New Build & Factory Allocations" },
-    { title: "Private Brokerage", label: "Discreet Off-Market Portfolio Sales" },
-    { title: "Bespoke Sourcing", label: "Global Exotic & Rare Vehicles" },
-    { title: "Concierge Care", label: "End-to-End Asset Management" },
+    { title: "Precision Advisory", label: "New Factory Builds & Allocations" },
+    { title: "Private Brokerage", label: "Discreet Off-Market Transactions" },
+    { title: "Bespoke Sourcing", label: "Global Rare & Exotic Network" },
+    { title: "Concierge Care", label: "Complete Vehicle Management" },
   ];
 
   return (
@@ -255,35 +259,44 @@ function Credibility() {
 }
 
 /* ---------------------------------------------------------------
-   SERVICES (UPDATED TO EMPHASIZE BROKERAGE & NEW CAR ADVISORY)
+   SERVICES (INTEGRATING DURABLE'S STRUCTURED SERVICE BLOCKS)
 --------------------------------------------------------------- */
 function Services() {
   const services = [
     {
       icon: Briefcase,
       title: "Luxury Advisory & Brokerage",
-      desc: "Beyond pre-owned sales, we act as specialized advisors for brand-new luxury builds, factory allocations, and high-value private car brokerage.",
+      desc: "Specialized advisory for brand-new luxury vehicle acquisitions, custom factory allocations, and high-value private automobile brokerage.",
+      features: ["Factory Build Slot Allocation", "Private High-Net-Worth Sales", "Market Valuation Reports"]
     },
     {
       icon: Compass,
-      title: "Bespoke New & Rare Sourcing",
-      desc: "Leveraging exclusive private collector networks and global dealer relationships to secure coveted, limited-production, or custom-spec automobiles.",
+      title: "Bespoke Exotic Sourcing",
+      desc: "Leveraging our private global collector network to locate off-market, limited-edition, or hyper-specific automotive builds.",
+      features: ["Off-Market Acquisition", "Global Logistics & Import", "Custom Spec Verification"]
     },
     {
       icon: ShieldCheck,
-      title: "Consignment & Portfolio Management",
-      desc: "Discreet, white-glove consignment services ensuring maximum asset valuation and target market positioning for extraordinary luxury vehicles.",
+      title: "Consignment & Portfolio Sales",
+      desc: "Discreet, white-glove consignment services designed to achieve optimal valuation for extraordinary collector vehicles.",
+      features: ["Targeted Collector Reach", "Full Confidentiality", "Seamless Documentation"]
+    },
+    {
+      icon: Wrench,
+      title: "Multi-Point Audit & Detailing",
+      desc: "Comprehensive technical audits, multi-layer ceramic paint protection, and complete restorative detailing for pristine presentation.",
+      features: ["Mechanical & Provenance Audits", "Paint Correction & Protection", "Bespoke Interior Care"]
     },
   ];
 
   return (
     <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Bespoke Offerings</p>
-        <h2 className="f-display text-3xl md:text-5xl font-light">Advisory & Brokerage</h2>
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Bespoke Solutions</p>
+        <h2 className="f-display text-3xl md:text-5xl font-light">Advisory & Services</h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((s, index) => {
           const Icon = s.icon;
           return (
@@ -299,9 +312,26 @@ function Services() {
                 <div className="w-12 h-12 rounded-xl bg-[#28282C]/60 border border-[#28282C] flex items-center justify-center text-[#D8B45E] mb-6">
                   <Icon size={22} />
                 </div>
-                <h3 className="f-display text-xl font-light mb-3">{s.title}</h3>
-                <p className="text-sm text-[#98969E] leading-relaxed font-light">{s.desc}</p>
+                <h3 className="f-display text-2xl font-light mb-3">{s.title}</h3>
+                <p className="text-sm text-[#98969E] leading-relaxed font-light mb-6">{s.desc}</p>
+                
+                <ul className="space-y-2.5 mb-8 border-t border-[#28282C] pt-6">
+                  {s.features.map((feat, idx) => (
+                    <li key={idx} className="flex items-center gap-2.5 text-xs text-[#F4F2EC]">
+                      <ChevronRight size={14} className="text-[#D8B45E]" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
+
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-[#D8B45E] hover:text-[#F0DFAE] transition-colors"
+              >
+                <span>Inquire About Service</span>
+                <ArrowUpRight size={14} />
+              </a>
             </motion.div>
           );
         })}
@@ -311,23 +341,23 @@ function Services() {
 }
 
 /* ---------------------------------------------------------------
-   WHY PEGASUS
+   WHY PEGASUS (DURABLE VALUE PROPOSITION)
 --------------------------------------------------------------- */
 function WhyPegasus() {
   return (
     <section id="why-pegasus" className="py-24 px-6 bg-[#131315] border-y border-[#28282C]">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">The Pegasus Standard</p>
-          <h2 className="f-display text-3xl md:text-5xl font-light mb-6">Complete Automotive Advisory</h2>
+          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">The Pegasus Advantage</p>
+          <h2 className="f-display text-3xl md:text-5xl font-light mb-6">Uncompromising Quality & Precision</h2>
           <p className="text-[#98969E] text-base leading-relaxed mb-6 font-light">
-            We operate as your dedicated luxury automotive partner. Whether guiding brand-new luxury acquisition, brokerage transactions, or private collector sourcing, precision remains paramount.
+            We bridge the gap between discerning collectors and extraordinary automobiles. Every advisory engagement and vehicle transaction is backed by rigorous standards of privacy and precision.
           </p>
           <ul className="space-y-4 mb-8">
             {[
-              "Brand-New Luxury & Pre-Owned Advisory",
-              "Private Brokerage & Portfolio Sourcing",
-              "Verified Provenance & Comprehensive Audits",
+              "Brand-New Luxury Allocations & Private Brokerage",
+              "Transparent Valuation & Off-Market Portfolio Access",
+              "Rigorously Verified Vehicle Provenance & History",
             ].map((item, i) => (
               <li key={i} className="flex items-center gap-3 text-sm text-[#F4F2EC]">
                 <CheckCircle2 size={16} className="text-[#D8B45E] shrink-0" />
@@ -338,12 +368,12 @@ function WhyPegasus() {
         </div>
         <div className="pa-card rounded-2xl p-8 bg-[#0A0A0B] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#D8B45E]/5 rounded-full blur-3xl pointer-events-none" />
-          <h3 className="f-display text-2xl font-light mb-4">Advisory Consultation</h3>
+          <h3 className="f-display text-2xl font-light mb-4">Executive Advisory Consultation</h3>
           <p className="text-sm text-[#98969E] mb-6 font-light leading-relaxed">
-            Connect directly with an executive advisor to discuss brand-new allocations, custom builds, private brokerage, or vehicle consignments.
+            Schedule a private session with an advisor to discuss brand-new allocations, custom builds, or private consignment.
           </p>
           <a href="#contact" className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-flex items-center gap-2">
-            <span>Schedule Consultation</span>
+            <span>Schedule Meeting</span>
             <ArrowUpRight size={14} />
           </a>
         </div>
@@ -353,7 +383,7 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   LUXURY GALLERY
+   FEATURED COLLECTION GALLERY
 --------------------------------------------------------------- */
 const luxuryCars = [
   { 
@@ -419,23 +449,23 @@ function LuxuryCarGallery() {
 }
 
 /* ---------------------------------------------------------------
-   INVENTORY
+   PRIVATE PORTFOLIO & SHOWROOM
 --------------------------------------------------------------- */
 function Inventory() {
   return (
     <section id="inventory" className="py-24 px-6 max-w-7xl mx-auto border-t border-[#28282C]">
       <div className="text-center mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Curated Listings</p>
-        <h2 className="f-display text-3xl md:text-5xl font-light">Showroom & Off-Market Portfolio</h2>
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Private Portfolio</p>
+        <h2 className="f-display text-3xl md:text-5xl font-light">Off-Market Catalog</h2>
       </div>
       <div className="pa-card p-12 rounded-2xl text-center max-w-xl mx-auto">
         <Sparkles size={24} className="text-[#D8B45E] mx-auto mb-4" />
-        <p className="text-[#F4F2EC] text-base font-medium mb-2">Private Portfolio Access</p>
+        <p className="text-[#F4F2EC] text-base font-medium mb-2">Confidential Portfolio Access</p>
         <p className="text-[#98969E] text-xs font-light leading-relaxed mb-6">
-          Our brand-new allocations and off-market brokerage vehicles are kept private. Request direct consultation for full catalog access.
+          To maintain discretion for our clients, our brand-new factory allocations and off-market brokerage listings are available exclusively upon direct request.
         </p>
         <a href="#contact" className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-block">
-          Request Private Portfolio
+          Request Confidential Catalog
         </a>
       </div>
     </section>
@@ -483,7 +513,7 @@ function Testimonials() {
 }
 
 /* ---------------------------------------------------------------
-   CONTACT & SOCIAL LINKS
+   CONTACT & BOOKING (COLLABORATED WITH DURABLE CONVERSION FORM)
 --------------------------------------------------------------- */
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -508,7 +538,7 @@ function Contact() {
           <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Get In Touch</p>
           <h2 className="f-display text-3xl md:text-5xl font-light mb-6">Contact Us</h2>
           <p className="text-[#98969E] text-sm mb-8 font-light leading-relaxed">
-            Speak with an advisor regarding luxury acquisitions, new vehicle allocations, private brokerage, or showroom appointments.
+            Speak directly with an automotive specialist regarding new allocations, brokerage, or showroom appointments.
           </p>
           
           <div className="space-y-5 mb-10">
@@ -586,14 +616,15 @@ function Contact() {
           </div>
         </div>
 
+        {/* Structured Form */}
         <div className="pa-card p-8 rounded-2xl relative">
-          <h3 className="f-display text-2xl font-light mb-6">Send an Inquiry</h3>
+          <h3 className="f-display text-2xl font-light mb-6">Schedule Consultation</h3>
           
           {submitted ? (
             <div className="p-6 bg-[#0A0A0B] border border-[#28282C] rounded-xl text-center my-12">
               <CheckCircle2 size={32} className="text-[#D8B45E] mx-auto mb-3" />
               <p className="f-display text-lg text-[#F4F2EC] mb-1">Inquiry Received</p>
-              <p className="text-xs text-[#98969E]">Thank you for reaching out. An automotive specialist will contact you shortly.</p>
+              <p className="text-xs text-[#98969E]">Thank you for reaching out. An executive advisor will contact you shortly.</p>
             </div>
           ) : (
             <form className="space-y-4" onSubmit={handleSubmit}>
@@ -618,26 +649,28 @@ function Contact() {
               </div>
 
               <div>
-                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  placeholder="+91 00000 00000"
-                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
-                />
+                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Inquiry Type</label>
+                <select className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus">
+                  <option>Brand-New Luxury Build / Allocation</option>
+                  <option>Private Vehicle Brokerage</option>
+                  <option>Off-Market Exotic Sourcing</option>
+                  <option>Vehicle Consignment Services</option>
+                  <option>Detailing & Technical Audit</option>
+                </select>
               </div>
 
               <div>
-                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Message or Inquiry</label>
+                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Message or Specifications</label>
                 <textarea
                   required
-                  placeholder="Details regarding luxury advisory, new build allocations, or brokerage..."
+                  placeholder="Details regarding your preferred vehicle or service requirements..."
                   rows={4}
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
               </div>
 
               <button type="submit" className="pa-btn-gold w-full py-3.5 rounded-lg text-xs uppercase tracking-wider font-bold mt-2">
-                Send Message
+                Submit Request
               </button>
             </form>
           )}
@@ -671,9 +704,9 @@ function Footer() {
 }
 
 /* ---------------------------------------------------------------
-   MAIN APPLICATION
+   MAIN APP EXPORT
 --------------------------------------------------------------- */
-export default function PegasusAutomotives() {
+export default function App() {
   return (
     <div className="pa-root min-h-screen w-full">
       <style>{FONT_STYLES}</style>
