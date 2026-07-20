@@ -11,6 +11,7 @@ To run locally:
 1. `npm install`
 2. `npm run dev`
 ## Connect with us
-- [Instagram]https://www.instagram.com/pegasus_automotivs/
+- [Instagram](https://www.instagram.com/pegasus_automotivs/)
 - [LinkedIn](https://www.linkedin.com/company/pegasus-automotives)
-- [Facebook](https://www.facebook.com/PegasusAutomotives/about/)
+- [Facebook](https://www.facebook.com/PegasusAutomotives)
+- [YouTube](https://www.youtube.com/@pegsusautomotives)
