@@ -669,10 +669,6 @@ function Contact() {
 /* ---------------------------------------------------------------
    Luxury Gallery
 --------------------------------------------------------------- */
-const luxuryCars = [
-  { src: "/rr.jpg", title: "Rolls-Royce" },
-  { src: "/bmw.jpg", title: "BMW" },
-];
 
 function LuxuryCarGallery() {
   return (
