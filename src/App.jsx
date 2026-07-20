@@ -505,7 +505,51 @@ function Testimonials() {
     </section>
   );
 }
+/* ---------------------------------------------------------------
+   Luxury Gallery
+--------------------------------------------------------------- */
+const luxuryCars = [
+  { src: "/rr.jpg", title: "Rolls-Royce" },
+  { src: "/bmw.jpg", title: "BMW" },
+];
 
+function LuxuryCarGallery() {
+  return (
+    <section id="gallery" className="py-24 px-6 max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "var(--gold-400)" }}>
+          Excellence in Motion
+        </p>
+        <h2 className="f-display text-3xl md:text-5xl font-light tracking-tight" style={{ color: "var(--ivory)" }}>
+          Featured Gallery
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {luxuryCars.map((car, index) => (
+          <div
+            key={index}
+            className="group relative overflow-hidden rounded-2xl border transition-all duration-500"
+            style={{ borderColor: "var(--line)", backgroundColor: "var(--panel)" }}
+          >
+            <div className="h-96 overflow-hidden">
+              <img
+                src={car.src}
+                alt={car.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="p-5 text-center">
+              <h3 className="f-display text-xl font-light tracking-wide" style={{ color: "var(--ivory)" }}>
+                {car.title}
+              </h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 /* ---------------------------------------------------------------
    Contact
 --------------------------------------------------------------- */
@@ -623,6 +667,51 @@ function Contact() {
 }
 
 /* ---------------------------------------------------------------
+   Luxury Gallery
+--------------------------------------------------------------- */
+const luxuryCars = [
+  { src: "/rr.jpg", title: "Rolls-Royce" },
+  { src: "/bmw.jpg", title: "BMW" },
+];
+
+function LuxuryCarGallery() {
+  return (
+    <section id="gallery" className="py-24 px-6 max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 font-semibold" style={{ color: "var(--gold-400)" }}>
+          Excellence in Motion
+        </p>
+        <h2 className="f-display text-3xl md:text-5xl font-light tracking-tight" style={{ color: "var(--ivory)" }}>
+          Featured Gallery
+        </h2>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {luxuryCars.map((car, index) => (
+          <div
+            key={index}
+            className="group relative overflow-hidden rounded-2xl border transition-all duration-500"
+            style={{ borderColor: "var(--line)", backgroundColor: "var(--panel)" }}
+          >
+            <div className="h-96 overflow-hidden">
+              <img
+                src={car.src}
+                alt={car.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+            </div>
+            <div className="p-5 text-center">
+              <h3 className="f-display text-xl font-light tracking-wide" style={{ color: "var(--ivory)" }}>
+                {car.title}
+              </h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+/* ---------------------------------------------------------------
    Footer
 --------------------------------------------------------------- */
 function Footer() {
@@ -688,7 +777,8 @@ export default function PegasusAutomotives() {
       <Hero />
       <Credibility />
       <Services />
-      <WhyPegasus />
+     <WhyPegasus />
+<LuxuryCarGallery />
       <Inventory />
       <Testimonials />
       <Contact />
