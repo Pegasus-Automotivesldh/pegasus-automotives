@@ -1,3 +1,4 @@
+import SocialLinks from "./components/SocialLinks";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -683,9 +684,13 @@ function Contact() {
         </div>
       </div>
     </section>
+  
+      <SocialLinks />
+      <Footer />
+    </div>
   );
 }
-
+      
 /* ---------------------------------------------------------------
    FOOTER
 --------------------------------------------------------------- */
