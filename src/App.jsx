@@ -234,7 +234,7 @@ function Hero() {
 }
 
 /* ---------------------------------------------------------------
-   CREDIBILITY & CORE BRAND PILLARS (DURABLE COLLABORATION)
+   CREDIBILITY & CORE BRAND PILLARS
 --------------------------------------------------------------- */
 function Credibility() {
   const highlights = [
@@ -259,7 +259,7 @@ function Credibility() {
 }
 
 /* ---------------------------------------------------------------
-   SERVICES (INTEGRATING DURABLE'S STRUCTURED SERVICE BLOCKS)
+   SERVICES
 --------------------------------------------------------------- */
 function Services() {
   const services = [
@@ -341,7 +341,7 @@ function Services() {
 }
 
 /* ---------------------------------------------------------------
-   WHY PEGASUS (DURABLE VALUE PROPOSITION)
+   WHY PEGASUS
 --------------------------------------------------------------- */
 function WhyPegasus() {
   return (
@@ -473,47 +473,51 @@ function Inventory() {
 }
 
 /* ---------------------------------------------------------------
-   TESTIMONIALS
+   TESTIMONIALS (DYNAMIC - LEFT BLANK FOR CLIENT PURCHASES)
 --------------------------------------------------------------- */
 function Testimonials() {
+  // Client reviews array - intentionally empty so genuine client reviews can be added post-purchase
+  const clientFeedbacks = [];
+
   return (
     <section id="testimonials" className="py-24 px-6 bg-[#131315] border-y border-[#28282C]">
       <div className="max-w-7xl mx-auto text-center">
         <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Client Experience</p>
         <h2 className="f-display text-3xl md:text-5xl font-light mb-12">Client Feedback</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-          <div className="pa-card p-8 rounded-2xl">
-            <p className="text-sm text-[#98969E] leading-relaxed mb-6 font-light italic">
-              "Their brokerage team secured my new build allocation effortlessly. Pegasus provided an unparalleled executive advisory experience."
+
+        {clientFeedbacks.length === 0 ? (
+          <div className="pa-card p-10 rounded-2xl max-w-xl mx-auto">
+            <p className="text-[#98969E] text-sm font-light leading-relaxed">
+              No client reviews yet. Reviews will be shared directly by verified vehicle buyers after delivery.
             </p>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#28282C] flex items-center justify-center font-bold text-xs text-[#D8B45E]">P</div>
-              <div>
-                <div className="text-xs font-bold text-[#F4F2EC]">Private Client</div>
-                <div className="f-mono text-[10px] text-[#98969E]">Ludhiana, India</div>
-              </div>
-            </div>
           </div>
-          <div className="pa-card p-8 rounded-2xl">
-            <p className="text-sm text-[#98969E] leading-relaxed mb-6 font-light italic">
-              "Unmatched professionalism in handling our private vehicle consignment and finding a custom luxury acquisition."
-            </p>
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#28282C] flex items-center justify-center font-bold text-xs text-[#D8B45E]">A</div>
-              <div>
-                <div className="text-xs font-bold text-[#F4F2EC]">Automotive Enthusiast</div>
-                <div className="f-mono text-[10px] text-[#98969E]">Chandigarh, India</div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+            {clientFeedbacks.map((feedback, idx) => (
+              <div key={idx} className="pa-card p-8 rounded-2xl">
+                <p className="text-sm text-[#98969E] leading-relaxed mb-6 font-light italic">
+                  "{feedback.quote}"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-full bg-[#28282C] flex items-center justify-center font-bold text-xs text-[#D8B45E]">
+                    {feedback.author[0]}
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-[#F4F2EC]">{feedback.author}</div>
+                    <div className="f-mono text-[10px] text-[#98969E]">{feedback.location}</div>
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
 }
 
 /* ---------------------------------------------------------------
-   CONTACT & BOOKING (COLLABORATED WITH DURABLE CONVERSION FORM)
+   CONTACT & BOOKING
 --------------------------------------------------------------- */
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -584,12 +588,14 @@ function Contact() {
             </a>
 
             <div className="flex items-center gap-4 text-sm text-[#98969E]">
-              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E]">
+              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] shrink-0">
                 <MapPin size={18} />
               </div>
               <div className="flex flex-col">
                 <span className="f-mono text-[10px] text-[#98969E] uppercase">Location</span>
-                <span className="text-[#F4F2EC] font-medium">Ludhiana, Punjab, India</span>
+                <span className="text-[#F4F2EC] font-medium">
+                  G.T. Road, Sahnewal, Ludhiana, Punjab, India 141120
+                </span>
               </div>
             </div>
           </div>
