@@ -10,7 +10,6 @@ import {
   X,
   ShieldCheck,
   Compass,
-  KeyRound,
   Instagram,
   Facebook,
   Linkedin,
@@ -20,9 +19,6 @@ import {
   ArrowUpRight,
   Briefcase,
   Wrench,
-  Award,
-  Clock,
-  Car,
   ChevronRight
 } from "lucide-react";
 
@@ -98,7 +94,6 @@ function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* EXTRA-LARGE LOGO */}
         <a href="#" className="group block">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 group-hover:border-[#D8B45E] transition-colors duration-300 shadow-2xl">
             <img
@@ -109,7 +104,6 @@ function Navbar() {
           </div>
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => (
             <a
@@ -132,7 +126,6 @@ function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-[#F4F2EC] p-2 rounded-lg border border-[#28282C] bg-[#131315]"
@@ -142,7 +135,6 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -196,7 +188,6 @@ function Hero() {
           </span>
         </motion.div>
 
-        {/* TAGLINE */}
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -474,10 +465,9 @@ function Inventory() {
 }
 
 /* ---------------------------------------------------------------
-   TESTIMONIALS (DYNAMIC - LEFT BLANK FOR CLIENT PURCHASES)
+   TESTIMONIALS
 --------------------------------------------------------------- */
 function Testimonials() {
-  // Client reviews array - intentionally empty so genuine client reviews can be added post-purchase
   const clientFeedbacks = [];
 
   return (
@@ -623,7 +613,6 @@ function Contact() {
           </div>
         </div>
 
-        {/* Structured Form */}
         <div className="pa-card p-8 rounded-2xl relative">
           <h3 className="f-display text-2xl font-light mb-6">Schedule Consultation</h3>
           
@@ -684,13 +673,9 @@ function Contact() {
         </div>
       </div>
     </section>
-  
-      <SocialLinks />
-      <Footer />
-    </div>
   );
 }
-      
+
 /* ---------------------------------------------------------------
    FOOTER
 --------------------------------------------------------------- */
@@ -698,7 +683,6 @@ function Footer() {
   return (
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        {/* EXTRA-LARGE FOOTER LOGO */}
         <a href="#" className="block">
           <div className="w-20 h-20 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D8B45E] transition-colors duration-300">
             <img
@@ -730,6 +714,7 @@ export default function App() {
       <Inventory />
       <Testimonials />
       <Contact />
+      <SocialLinks />
       <Footer />
     </div>
   );
