@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Phone,
   Mail,
@@ -14,206 +14,214 @@ import {
   MessageCircle
 } from "lucide-react";
 
-const FONT_STYLES = `
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
-
-  .pa-root {
-    --void:#0A0A0B; --panel:#131315; --line:#28282C;
-    --gold-600:#B4892C; --gold-500:#C9A227; --gold-400:#D8B45E; --gold-200:#F0DFAE;
-    --ivory:#F4F2EC; --ash:#98969E;
-    background:var(--void); color:var(--ivory);
-    font-family:'Manrope',sans-serif;
-  }
-  .pa-root .f-display{ font-family:'Fraunces',serif; }
-  .pa-root .f-mono{ font-family:'Space Mono',monospace; letter-spacing:0.14em; }
-
-  .pa-card-btn {
-    background: var(--panel);
-    border: 1px solid var(--line);
-    transition: all 0.3s ease;
-  }
-  .pa-card-btn:hover {
-    border-color: var(--gold-500);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px -10px rgba(216, 180, 94, 0.2);
-  }
-
-  .pa-gold-btn {
-    background: linear-gradient(135deg, var(--gold-400), var(--gold-600));
-    color: #161208;
-  }
-  .pa-gold-btn:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-  }
-`;
-
 export default function SocialLinks() {
-  const primaryLinks = [
-    {
-      title: "Explore Off-Market Catalog",
-      subtitle: "Confidential luxury vehicle portfolio",
-      href: "/#inventory",
-      icon: Car,
-      highlight: true,
-    },
-    {
-      title: "Chat on WhatsApp",
-      subtitle: "Instant response from an executive advisor",
-      href: "https://wa.me/919501462967",
-      icon: MessageCircle,
-      highlight: false,
-    },
-    {
-      title: "Book Private Consultation",
-      subtitle: "Schedule a showroom or virtual advisory session",
-      href: "/#contact",
-      icon: Sparkles,
-      highlight: false,
-    },
-    {
-      title: "Visit Official Website",
-      subtitle: "www.pegasusautomotivesldh.in",
-      href: "https://www.pegasusautomotivesldh.in",
-      icon: Globe,
-      highlight: false,
-    },
-  ];
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "Vehicle Sourcing & Acquisition",
+    message: ""
+  });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const socialIcons = [
-    { icon: Instagram, href: "https://www.instagram.com/pegasus_automotivs", label: "Instagram" },
-    { icon: Facebook, href: "https://www.facebook.com/PegasusAutomotives", label: "Facebook" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/pegasus-automotives", label: "LinkedIn" },
-    { icon: Youtube, href: "https://www.youtube.com/@pegasusautomotives", label: "YouTube" },
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitted(true);
+    setTimeout(() => setIsSubmitted(false), 5000);
+  };
+
+  const socialPlatforms = [
+    { name: "Instagram", handle: "@pegasus_automotivs", href: "https://www.instagram.com/pegasus_automotivs", icon: Instagram },
+    { name: "Facebook", handle: "PegasusAutomotives", href: "https://www.facebook.com/PegasusAutomotives", icon: Facebook },
+    { name: "LinkedIn", handle: "Pegasus Automotives", href: "https://www.linkedin.com/company/pegasus-automotives", icon: Linkedin },
+    { name: "YouTube", handle: "@pegasusautomotives", href: "https://www.youtube.com/@pegasusautomotives", icon: Youtube }
   ];
 
   return (
-    <div className="pa-root min-h-screen w-full flex flex-col items-center justify-between py-12 px-6">
-      <style>{FONT_STYLES}</style>
-
-      {/* HEADER SECTION */}
-      <div className="max-w-md w-full text-center flex flex-col items-center">
-        <div className="w-24 h-24 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1.5 shadow-2xl mb-6">
-          <img
-            src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
-            alt="Pegasus Automotives Logo"
-            className="w-full h-full object-contain rounded-xl"
-          />
+    <div id="contact" className="py-20 px-6 max-w-7xl mx-auto">
+      {/* Section Header */}
+      <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#28282C] bg-[#131315] mb-4">
+          <Sparkles size={12} className="text-[#D8B45E]" />
+          <span className="f-mono text-[10px] uppercase text-[#D8B45E]">Direct Communication</span>
         </div>
-
-        <h1 className="f-display text-2xl sm:text-3xl font-light tracking-tight mb-2">
-          Pegasus Automotives
-        </h1>
-
-        <p className="f-mono text-[10px] tracking-[0.2em] uppercase text-[#D8B45E] mb-4">
-          Luxury Advisory & Private Brokerage
-        </p>
-
-        <p className="text-xs text-[#98969E] font-light italic leading-relaxed mb-8 max-w-xs">
-          "Black leather, polished chrome, and the scent of a new drive."
+        <h2 className="f-display text-3xl sm:text-5xl font-light mb-4">Connect & Consult</h2>
+        <p className="text-sm text-[#98969E] font-light">
+          Reach out to our advisory team for personalized vehicle sourcing, factory allocations, or private showroom visits.
         </p>
       </div>
 
-      {/* CALL TO ACTION BUTTONS */}
-      <div className="max-w-md w-full space-y-4 mb-10">
-        {primaryLinks.map((link, idx) => {
-          const Icon = link.icon;
-          return (
-            <a
-              key={idx}
-              href={link.href}
-              target={link.href.startsWith("http") ? "_blank" : "_self"}
-              rel="noreferrer"
-              className={`w-full p-4 rounded-xl flex items-center justify-between group ${
-                link.highlight
-                  ? "pa-gold-btn font-bold transition-all duration-300 shadow-lg"
-                  : "pa-card-btn text-[#F4F2EC]"
-              }`}
-            >
-              <div className="flex items-center gap-4">
-                <div
-                  className={`w-10 h-10 rounded-lg flex items-center justify-center ${
-                    link.highlight
-                      ? "bg-[#161208]/10 text-[#161208]"
-                      : "bg-[#0A0A0B] border border-[#28282C] text-[#D8B45E]"
-                  }`}
-                >
-                  <Icon size={20} />
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        {/* Left Column - Contact Info & Socials */}
+        <div className="lg:col-span-5 space-y-8">
+          <div className="pa-card p-6 sm:p-8 rounded-2xl">
+            <h3 className="f-display text-xl font-light mb-6 text-[#F4F2EC]">Direct Channels</h3>
+            <div className="space-y-6">
+              <a href="tel:+919501462967" className="flex items-start gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-[#18181B] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors shrink-0">
+                  <Phone size={18} />
                 </div>
-                <div className="text-left">
-                  <div className="text-sm font-semibold">{link.title}</div>
-                  <div
-                    className={`text-[11px] font-light ${
-                      link.highlight ? "text-[#161208]/80" : "text-[#98969E]"
-                    }`}
-                  >
-                    {link.subtitle}
-                  </div>
+                <div>
+                  <span className="f-mono text-[10px] uppercase text-[#6B6970] block">Direct Line</span>
+                  <span className="text-sm font-medium text-[#F4F2EC] group-hover:text-[#D8B45E] transition-colors">+91 95014 62967</span>
+                </div>
+              </a>
+
+              <a href="mailto:pegasusautomotivesldh@gmail.com" className="flex items-start gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-[#18181B] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors shrink-0">
+                  <Mail size={18} />
+                </div>
+                <div>
+                  <span className="f-mono text-[10px] uppercase text-[#6B6970] block">Email Inquiries</span>
+                  <span className="text-sm font-medium text-[#F4F2EC] group-hover:text-[#D8B45E] transition-colors">pegasusautomotivesldh@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://www.pegasusautomotivesldh.in" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
+                <div className="w-10 h-10 rounded-xl bg-[#18181B] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors shrink-0">
+                  <Globe size={18} />
+                </div>
+                <div>
+                  <span className="f-mono text-[10px] uppercase text-[#6B6970] block">Official Website</span>
+                  <span className="text-sm font-medium text-[#F4F2EC] group-hover:text-[#D8B45E] transition-colors">www.pegasusautomotivesldh.in</span>
+                </div>
+              </a>
+
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-xl bg-[#18181B] border border-[#28282C] flex items-center justify-center text-[#D8B45E] shrink-0">
+                  <MapPin size={18} />
+                </div>
+                <div>
+                  <span className="f-mono text-[10px] uppercase text-[#6B6970] block">Showroom Location</span>
+                  <span className="text-sm text-[#F4F2EC]">G.T. Road, Sahnewal, Ludhiana, Punjab 141120</span>
                 </div>
               </div>
-              <ArrowUpRight
-                size={18}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-              />
-            </a>
-          );
-        })}
-      </div>
+            </div>
+          </div>
 
-      {/* LOCATION & DIRECT CONTACT CARD */}
-      <div className="max-w-md w-full p-6 rounded-2xl bg-[#131315] border border-[#28282C] space-y-4 mb-10 text-xs text-[#98969E]">
-        <div className="flex items-start gap-3">
-          <MapPin size={16} className="text-[#D8B45E] shrink-0 mt-0.5" />
-          <div>
-            <span className="f-mono text-[9px] uppercase block text-[#D8B45E]">Showroom Location</span>
-            <span className="text-[#F4F2EC]">
-              G.T. Road, Sahnewal, Ludhiana, Punjab, India 141120
-            </span>
+          {/* Social Platforms Grid */}
+          <div className="pa-card p-6 sm:p-8 rounded-2xl">
+            <h3 className="f-display text-xl font-light mb-6 text-[#F4F2EC]">Digital Presence</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {socialPlatforms.map((platform) => {
+                const Icon = platform.icon;
+                return (
+                  <a
+                    key={platform.name}
+                    href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3.5 rounded-xl border border-[#28282C] bg-[#18181B] hover:border-[#D8B45E] transition-all flex items-center justify-between group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <Icon size={18} className="text-[#D8B45E]" />
+                      <div className="overflow-hidden">
+                        <p className="text-xs font-semibold text-[#F4F2EC]">{platform.name}</p>
+                        <p className="text-[10px] text-[#6B6970] truncate">{platform.handle}</p>
+                      </div>
+                    </div>
+                    <ArrowUpRight size={14} className="text-[#6B6970] group-hover:text-[#D8B45E] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  </a>
+                );
+              })}
+            </div>
           </div>
         </div>
 
-        <div className="flex items-center justify-between pt-3 border-t border-[#28282C]">
-          <a
-            href="tel:+919501462967"
-            className="flex items-center gap-2 text-[#F4F2EC] hover:text-[#D8B45E] transition-colors"
-          >
-            <Phone size={14} className="text-[#D8B45E]" />
-            <span>+91 95014 62967</span>
-          </a>
+        {/* Right Column - Consultation Form */}
+        <div className="lg:col-span-7">
+          <div className="pa-card p-6 sm:p-10 rounded-2xl h-full flex flex-col justify-between">
+            <div>
+              <h3 className="f-display text-2xl font-light mb-2 text-[#F4F2EC]">Schedule a Consultation</h3>
+              <p className="text-xs text-[#98969E] mb-8 font-light">
+                Fill in your details below and an automotive specialist will contact you within 24 hours.
+              </p>
 
-          <a
-            href="mailto:pegasusautomotivesldh@gmail.com"
-            className="flex items-center gap-2 text-[#F4F2EC] hover:text-[#D8B45E] transition-colors"
-          >
-            <Mail size={14} className="text-[#D8B45E]" />
-            <span>Email Us</span>
-          </a>
+              {isSubmitted ? (
+                <div className="p-8 border border-[#D8B45E]/30 bg-[#C9A227]/5 rounded-xl text-center my-auto">
+                  <Car size={36} className="text-[#D8B45E] mx-auto mb-3" />
+                  <h4 className="f-display text-xl text-[#F4F2EC] mb-2">Request Received</h4>
+                  <p className="text-xs text-[#98969E]">
+                    Thank you. A Pegasus Automotives advisor will get in touch with you shortly.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block f-mono text-[10px] uppercase text-[#6B6970] mb-1.5">Full Name</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        className="w-full bg-[#18181B] border border-[#28282C] rounded-xl px-4 py-3 text-xs text-[#F4F2EC] pa-focus"
+                      />
+                    </div>
+                    <div>
+                      <label className="block f-mono text-[10px] uppercase text-[#6B6970] mb-1.5">Phone Number</label>
+                      <input
+                        type="tel"
+                        required
+                        placeholder="+91 98765 43210"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        className="w-full bg-[#18181B] border border-[#28282C] rounded-xl px-4 py-3 text-xs text-[#F4F2EC] pa-focus"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block f-mono text-[10px] uppercase text-[#6B6970] mb-1.5">Email Address</label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full bg-[#18181B] border border-[#28282C] rounded-xl px-4 py-3 text-xs text-[#F4F2EC] pa-focus"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block f-mono text-[10px] uppercase text-[#6B6970] mb-1.5">Inquiry Type</label>
+                    <select
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                      className="w-full bg-[#18181B] border border-[#28282C] rounded-xl px-4 py-3 text-xs text-[#F4F2EC] pa-focus"
+                    >
+                      <option>Vehicle Sourcing & Acquisition</option>
+                      <option>Factory Build Slot Allocation</option>
+                      <option>Private Vehicle Consignment</option>
+                      <option>Multi-Point Audit & Detailing</option>
+                      <option>General Advisory</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label className="block f-mono text-[10px] uppercase text-[#6B6970] mb-1.5">Message / Requirements</label>
+                    <textarea
+                      rows={4}
+                      placeholder="Specify make, model, budget, or preferred specifications..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full bg-[#18181B] border border-[#28282C] rounded-xl px-4 py-3 text-xs text-[#F4F2EC] pa-focus"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="pa-btn-gold w-full py-3.5 rounded-xl text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 mt-2"
+                  >
+                    <MessageCircle size={15} />
+                    <span>Send Consultation Request</span>
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
-
-      {/* FOOTER */}
-      <div className="max-w-md w-full text-center flex flex-col items-center gap-6">
-        <div className="flex items-center gap-3">
-          {socialIcons.map((s, idx) => {
-            const Icon = s.icon;
-            return (
-              <a
-                key={idx}
-                href={s.href}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={s.label}
-                className="w-10 h-10 rounded-lg border border-[#28282C] bg-[#131315] flex items-center justify-center text-[#98969E] hover:text-[#D8B45E] hover:border-[#D8B45E] transition-all"
-              >
-                <Icon size={18} />
-              </a>
-            );
-          })}
-        </div>
-
-        <p className="text-[11px] text-[#98969E]">
-          &copy; {new Date().getFullYear()} Pegasus Automotives. All rights reserved.
-        </p>
       </div>
     </div>
   );
