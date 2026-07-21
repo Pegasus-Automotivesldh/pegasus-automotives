@@ -19,7 +19,9 @@ import {
   ArrowUpRight,
   Briefcase,
   Wrench,
-  ChevronRight
+  ChevronRight,
+  Star,
+  Send
 } from "lucide-react";
 
 /* ---------------------------------------------------------------
@@ -81,6 +83,7 @@ function Navbar() {
     { label: "Portfolio", href: "#inventory" },
     { label: "Why Pegasus", href: "#why-pegasus" },
     { label: "Gallery", href: "#gallery" },
+    { label: "Feedback", href: "#feedback" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Contact", href: "#contact" },
   ];
@@ -465,6 +468,139 @@ function Inventory() {
 }
 
 /* ---------------------------------------------------------------
+   FEEDBACK FORM
+--------------------------------------------------------------- */
+function FeedbackForm() {
+  const [rating, setRating] = useState(5);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    feedback: "",
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => {
+      setSubmitted(false);
+      setFormData({ name: "", email: "", feedback: "" });
+      setRating(5);
+    }, 5000);
+  };
+
+  return (
+    <section id="feedback" className="py-24 px-6 max-w-4xl mx-auto border-t border-[#28282C]">
+      <div className="text-center mb-12">
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+          Your Opinions Matter
+        </p>
+        <h2 className="f-display text-3xl md:text-5xl font-light">
+          Share Your Feedback
+        </h2>
+      </div>
+
+      <div className="pa-card p-8 sm:p-12 rounded-2xl relative">
+        {submitted ? (
+          <div className="p-8 bg-[#0A0A0B] border border-[#28282C] rounded-xl text-center my-8">
+            <CheckCircle2 size={40} className="text-[#D8B45E] mx-auto mb-4" />
+            <p className="f-display text-xl text-[#F4F2EC] mb-2">
+              Thank You for Your Feedback!
+            </p>
+            <p className="text-xs text-[#98969E] max-w-md mx-auto">
+              We appreciate your response. Your insights help us continuously elevate the Pegasus automotive experience.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div>
+                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  placeholder="e.g. John Doe"
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                />
+              </div>
+
+              <div>
+                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  placeholder="john@example.com"
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                />
+              </div>
+            </div>
+
+            {/* Rating Stars */}
+            <div>
+              <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
+                Overall Experience Rating
+              </label>
+              <div className="flex items-center gap-2">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button
+                    key={star}
+                    type="button"
+                    onClick={() => setRating(star)}
+                    onMouseEnter={() => setHoverRating(star)}
+                    onMouseLeave={() => setHoverRating(0)}
+                    className="p-1 focus:outline-none transition-transform hover:scale-110"
+                  >
+                    <Star
+                      size={24}
+                      className={
+                        star <= (hoverRating || rating)
+                          ? "text-[#D8B45E] fill-[#D8B45E]"
+                          : "text-[#28282C]"
+                      }
+                    />
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
+                Feedback & Comments
+              </label>
+              <textarea
+                required
+                rows={4}
+                value={formData.feedback}
+                onChange={(e) => setFormData({ ...formData, feedback: e.target.value })}
+                placeholder="Tell us about your experience with our brokerage, advisory, or showroom..."
+                className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="pa-btn-gold w-full py-4 rounded-lg text-xs uppercase tracking-wider font-bold inline-flex items-center justify-center gap-2"
+            >
+              <span>Submit Feedback</span>
+              <Send size={14} />
+            </button>
+          </form>
+        )}
+      </div>
+    </section>
+  );
+}
+
+/* ---------------------------------------------------------------
    TESTIMONIALS
 --------------------------------------------------------------- */
 function Testimonials() {
@@ -712,6 +848,7 @@ export default function App() {
       <WhyPegasus />
       <LuxuryCarGallery />
       <Inventory />
+      <FeedbackForm />
       <Testimonials />
       <Contact />
       <SocialLinks />
