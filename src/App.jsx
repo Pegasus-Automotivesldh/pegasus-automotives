@@ -474,20 +474,41 @@ function FeedbackForm() {
   const [rating, setRating] = useState(5);
   const [hoverRating, setHoverRating] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     feedback: "",
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", feedback: "" });
-      setRating(5);
-    }, 5000);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mqerlloz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          rating: rating,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", feedback: "" });
+        setRating(5);
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("There was an error submitting your feedback. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Network error. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -521,6 +542,7 @@ function FeedbackForm() {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -535,6 +557,7 @@ function FeedbackForm() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -577,6 +600,7 @@ function FeedbackForm() {
                 Feedback & Comments
               </label>
               <textarea
+                name="feedback"
                 required
                 rows={4}
                 value={formData.feedback}
@@ -588,9 +612,10 @@ function FeedbackForm() {
 
             <button
               type="submit"
+              disabled={submitting}
               className="pa-btn-gold w-full py-4 rounded-lg text-xs uppercase tracking-wider font-bold inline-flex items-center justify-center gap-2"
             >
-              <span>Submit Feedback</span>
+              <span>{submitting ? "Submitting..." : "Submit Feedback"}</span>
               <Send size={14} />
             </button>
           </form>
@@ -648,11 +673,43 @@ function Testimonials() {
 --------------------------------------------------------------- */
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [contactData, setContactData] = useState({
+    name: "",
+    email: "",
+    inquiryType: "Brand-New Luxury Build / Allocation",
+    message: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch("https://formspree.io/f/mqerlloz", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(contactData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setContactData({
+          name: "",
+          email: "",
+          inquiryType: "Brand-New Luxury Build / Allocation",
+          message: "",
+        });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("There was an error sending your message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Network error. Please try again later.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -764,7 +821,10 @@ function Contact() {
                 <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Full Name</label>
                 <input
                   type="text"
+                  name="name"
                   required
+                  value={contactData.name}
+                  onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
                   placeholder="e.g. John Doe"
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
@@ -774,7 +834,10 @@ function Contact() {
                 <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Email Address</label>
                 <input
                   type="email"
+                  name="email"
                   required
+                  value={contactData.email}
+                  onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
                   placeholder="john@example.com"
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
@@ -782,7 +845,12 @@ function Contact() {
 
               <div>
                 <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Inquiry Type</label>
-                <select className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus">
+                <select
+                  name="inquiryType"
+                  value={contactData.inquiryType}
+                  onChange={(e) => setContactData({ ...contactData, inquiryType: e.target.value })}
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                >
                   <option>Brand-New Luxury Build / Allocation</option>
                   <option>Private Vehicle Brokerage</option>
                   <option>Off-Market Exotic Sourcing</option>
@@ -794,15 +862,22 @@ function Contact() {
               <div>
                 <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Message or Specifications</label>
                 <textarea
+                  name="message"
                   required
+                  value={contactData.message}
+                  onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
                   placeholder="Details regarding your preferred vehicle or service requirements..."
                   rows={4}
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
               </div>
 
-              <button type="submit" className="pa-btn-gold w-full py-3.5 rounded-lg text-xs uppercase tracking-wider font-bold mt-2">
-                Submit Request
+              <button
+                type="submit"
+                disabled={submitting}
+                className="pa-btn-gold w-full py-3.5 rounded-lg text-xs uppercase tracking-wider font-bold mt-2"
+              >
+                {submitting ? "Submitting..." : "Submit Request"}
               </button>
             </form>
           )}
