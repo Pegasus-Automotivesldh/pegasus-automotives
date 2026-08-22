@@ -1,26 +1,50 @@
-export default function FeaturedCollection() {
-  const cars = [
-    { name: "Land Rover Defender", image: "/Images/cars/defender.jpg" },
-    { name: "Mercedes-Maybach", image: "/Images/cars/maybach.jpg" },
-    { name: "Porsche 911 Turbo S", image: "/Images/cars/porsche-911.jpg" },
-    { name: "Range Rover Gold", image: "/Images/cars/range-rover-gold.jpg" },
-    { name: "Range Rover Mountain Drive", image: "/Images/cars/range-rover-mountain.jpg" },
-    { name: "Maybach Emblem", image: "/Images/cars/maybach-emblem.jpg" },
-  ];
+const featuredItems = [
+  {
+    id: 1,
+    title: "Porsche Custom Tuning",
+    description: "High-performance styling and bespoke interior finishing.",
+    image: "/Images/Cars/Porsche💪🖤🤍.jfif",
+  },
+  {
+    id: 2,
+    title: "Range Rover Sport",
+    description: "Ultimate luxury combined with all-terrain capability.",
+    image: "/Images/Cars/Range Rover Sport (1).jfif",
+  },
+  {
+    id: 3,
+    title: "Minimalist Water Reflection",
+    description: "Sleek exterior aesthetics and refined detailing.",
+    image: "/Images/Cars/Range Rover Minimalist Water Reflection.jfif",
+  },
+  {
+    id: 4,
+    title: "Custom Interior Finishes",
+    description: "Premium materials matched to your exact taste.",
+    image: "/Images/Cars/Walnut creek colour.jpg",
+  },
+];
 
+export default function FeaturedCollection() {
   return (
-    <section className="py-12 bg-gray-900 text-white">
+    <section className="py-12 px-4 max-w-7xl mx-auto">
       <h2 className="text-3xl font-bold text-center mb-8">Featured Collection</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {cars.map((car, index) => (
-          <div key={index} className="bg-black rounded-lg shadow-lg overflow-hidden">
-            <img
-              src={car.image}
-              alt={car.name}
-              className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
-            />
-            <div className="p-4 text-center">
-              <h3 className="text-xl font-semibold">{car.name}</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {featuredItems.map((item) => (
+          <div 
+            key={item.id} 
+            className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
+          >
+            <div className="h-48 overflow-hidden">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" 
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="font-semibold text-lg">{item.title}</h3>
+              <p className="text-gray-600 text-sm mt-1">{item.description}</p>
             </div>
           </div>
         ))}
