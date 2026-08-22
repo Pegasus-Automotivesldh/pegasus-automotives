@@ -380,72 +380,77 @@ function WhyPegasus() {
    FEATURED COLLECTION (Updated with exact filenames)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
-  const collectionItems = [
+  const categories = [
     {
-      title: "Bentley Continental GT",
-      description: "Custom matte finish grand tourer paired with superior presence.",
-      image: "/bentley.jpg.jpg"
+      title: "British Luxury",
+      description: "Range Rover, Land Rover, Bentley, Jaguar",
+      icon: "👑",
     },
     {
-      title: "BMW X7 M60i (Larte Performance)",
-      description: "Aggressive body kit enhancements combined with peerless luxury.",
-      image: "/BMW X7 M60i G07 with Larte Performance body kit….jpg"
+      title: "German Engineering",
+      description: "Mercedes-Benz, BMW, Audi, Porsche",
+      icon: "⏱",
     },
     {
-      title: "Range Rover SV (British Racing Green)",
-      description: "Minimalist luxury with timeless elegance and modern stance.",
-      image: "/Range Rover SV British Racing Green___.jpg"
+      title: "Rare & Exotic",
+      description: "Limited-production and specialty marques",
+      icon: "🔥",
     },
     {
-      title: "Range Rover Sport",
-      description: "Dynamic performance combined with absolute comfort.",
-      image: "/Range Rover Sport (2).jpg"
+      title: "Electric & Hybrid Luxury",
+      description: "Next-generation performance and efficiency",
+      icon: "⚡",
     },
-    {
-      title: "Mercedes-AMG G-Wagon",
-      description: "Bespoke custom finish and iconic cross-country capability.",
-      image: "/gwagon.jpg.jpg"
-    }
   ];
 
   return (
     <section id="gallery" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Showcase</p>
-        <h2 className="f-display text-3xl md:text-5xl font-light">Featured Collection</h2>
+      {/* Section Header */}
+      <div className="text-center max-w-2xl mx-auto mb-16">
+        <p className="text-xs uppercase tracking-[0.25em] text-amber-400/80 mb-3 f-mono">
+          Featured Collection
+        </p>
+        <h2 className="text-3xl md:text-5xl font-serif mb-6 tracking-tight text-neutral-100">
+          Marques We Work With
+        </h2>
+        <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
+          Our advisory and brokerage work spans these categories of luxury and performance marques — reach out with a specific make or model in mind.
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {collectionItems.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-            className="pa-card rounded-2xl overflow-hidden flex flex-col group"
+      {/* Grid Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {categories.map((cat, idx) => (
+          <div 
+            key={idx}
+            className="bg-[#121212] border border-neutral-800 rounded-2xl p-8 transition-all duration-300 hover:border-amber-500/50 group flex flex-col justify-between"
           >
-            <div className="relative h-72 overflow-hidden bg-[#0A0A0B]">
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#131315] via-transparent to-transparent opacity-80" />
+            <div>
+              <div className="text-2xl mb-6 text-amber-400/90">{cat.icon}</div>
+              <h3 className="text-xl md:text-2xl font-serif mb-3 text-neutral-100 group-hover:text-amber-300 transition-colors">
+                {cat.title}
+              </h3>
+              <p className="text-neutral-400 text-sm md:text-base mb-8">
+                {cat.description}
+              </p>
             </div>
-            <div className="p-6 flex flex-col flex-grow justify-between">
-              <div>
-                <h3 className="f-display text-xl font-light mb-2">{item.title}</h3>
-                <p className="text-xs text-[#98969E] font-light leading-relaxed">{item.description}</p>
-              </div>
+            
+            <div>
+              <a 
+                href="#contact" 
+                className="inline-flex items-center text-xs font-mono tracking-widest text-neutral-300 uppercase hover:text-amber-400 transition-colors"
+              >
+                Enquire 
+                <span className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+              </a>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </section>
   );
 }
-
+  
 /* ---------------------------------------------------------------
    PRIVATE PORTFOLIO & SHOWROOM
 --------------------------------------------------------------- */
