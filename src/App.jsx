@@ -384,27 +384,27 @@ function FeaturedCollection() {
     {
       title: "Bentley Continental GT",
       description: "Custom matte finish grand tourer paired with superior presence.",
-      image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?auto=format&fit=crop&w=1000&q=80"
+      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Land Rover Defender",
       description: "Rugged yet refined design built for any terrain.",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80"
+      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Range Rover Reflection",
       description: "Minimalist luxury with timeless elegance and modern stance.",
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"
+      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Range Rover Sport",
       description: "Dynamic performance combined with absolute comfort.",
-      image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80"
+      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Mercedes-Benz Maybach / G-Wagon",
       description: "Bespoke luxury finish and iconic styling.",
-      image: "https://images.unsplash.com/photo-1520031441872-265e4ff70466?auto=format&fit=crop&w=1000&q=80"
+      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80"
     }
   ];
 
