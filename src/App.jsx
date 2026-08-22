@@ -377,7 +377,7 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Using Reliable Live Image URLs)
+   FEATURED COLLECTION (Aligned Correctly with Images)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const collectionItems = [
@@ -718,8 +718,8 @@ function Contact() {
   const socialLinks = [
     { icon: Instagram, href: "#", label: "Instagram" },
     { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Linkedin, href: "https://www.pegasusautomotivesldh.in/#services2", label: "LinkedIn" },
-    { icon: Youtube, href: "https://www.youtube.com/@pegasusautomotives", label: "YouTube" },
+    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Youtube, href: "#", label: "YouTube" },
   ];
 
   return (
@@ -747,7 +747,7 @@ function Contact() {
             </a>
 
             <a
-              href="url?id=8"
+              href="mailto:pegasusautomotivesldh@gmail.com"
               className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
             >
               <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
