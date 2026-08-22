@@ -377,34 +377,34 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Using previous public path image references)
+   FEATURED COLLECTION (Using Reliable Live Image URLs)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const collectionItems = [
     {
       title: "Bentley Continental GT",
       description: "Custom matte finish grand tourer paired with superior presence.",
-      image: "/bentley.jfif"
+      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Land Rover Defender",
       description: "Rugged yet refined design built for any terrain.",
-      image: "/defender.jfif"
+      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Range Rover Reflection",
       description: "Minimalist luxury with timeless elegance and modern stance.",
-      image: "/rangerover-reflection.jfif"
+      image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80"
     },
     {
       title: "Range Rover Sport",
       description: "Dynamic performance combined with absolute comfort.",
-      image: "/rangerover-sport.jfif"
+      image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?auto=format&fit=crop&w=1000&q=80"
     },
     {
-      title: "Mercedes-Benz G-Wagon",
-      description: "Walnut Creek bespoke color finish and iconic styling.",
-      image: "/gwagon.jfif"
+      title: "Mercedes-Benz Maybach / G-Wagon",
+      description: "Bespoke luxury finish and iconic styling.",
+      image: "https://images.unsplash.com/photo-1520031441872-265e4ff70466?auto=format&fit=crop&w=1000&q=80"
     }
   ];
 
@@ -747,7 +747,7 @@ function Contact() {
             </a>
 
             <a
-              href="mailto:pegasusautomotivesldh@gmail.com"
+              href="url?id=8"
               className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
             >
               <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
