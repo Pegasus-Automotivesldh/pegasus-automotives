@@ -3,25 +3,25 @@ const featuredItems = [
     id: 1,
     title: "Porsche Custom Tuning",
     description: "High-performance styling and bespoke interior finishing.",
-    image: "/Images/Cars/porsche.jfif",
+    image: "/Images/Cars/Porsche💪🖤🤍.jfif",
   },
   {
     id: 2,
     title: "Range Rover Sport",
     description: "Ultimate luxury combined with all-terrain capability.",
-    image: "/Images/Cars/range-rover-sport.jfif",
+    image: "/Images/Cars/Range Rover Sport (1).jfif",
   },
   {
     id: 3,
     title: "Minimalist Water Reflection",
     description: "Sleek exterior aesthetics and refined detailing.",
-    image: "/Images/Cars/range-rover-reflection.jfif",
+    image: "/Images/Cars/Range Rover Minimalist Water Reflection.jfif",
   },
   {
     id: 4,
     title: "Custom Interior Finishes",
     description: "Premium materials matched to your exact taste.",
-    image: "/Images/Cars/walnut-creek.jpg",
+    image: "/Images/Cars/Walnut creek colour.jpg",
   },
 ];
 
