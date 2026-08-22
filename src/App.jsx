@@ -1,3 +1,4 @@
+import FeaturedCollection from './components/FeaturedCollection';
 import SocialLinks from "./components/SocialLinks";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
