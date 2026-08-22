@@ -24,6 +24,15 @@ import {
 } from "lucide-react";
 
 /* ---------------------------------------------------------------
+   IMAGE IMPORTS (Ensure these files exist in your src/assets/ folder)
+--------------------------------------------------------------- */
+import bentleyImg from "./assets/bentley.jpg";
+import defenderImg from "./assets/defender.jpg";
+import rrReflectionImg from "./assets/rangerover-reflection.jpg";
+import rrSportImg from "./assets/rangerover-sport.jpg";
+import gwagonImg from "./assets/gwagon.jpg";
+
+/* ---------------------------------------------------------------
    PEGASUS AUTOMOTIVES — Brand Tokens & Global Styles
 --------------------------------------------------------------- */
 const FONT_STYLES = `
@@ -377,34 +386,34 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Using clean public root paths)
+   FEATURED COLLECTION (Using direct ES asset imports)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const collectionItems = [
     {
       title: "Bentley Continental GT",
       description: "Custom matte finish grand tourer paired with superior presence.",
-      image: "/bentley-gt.jfif"
+      image: bentleyImg
     },
     {
       title: "Land Rover Defender",
       description: "Rugged yet refined design built for any terrain.",
-      image: "/defender.jfif"
+      image: defenderImg
     },
     {
       title: "Range Rover Reflection",
       description: "Minimalist luxury with timeless elegance and modern stance.",
-      image: "/range-rover-reflection.jfif"
+      image: rrReflectionImg
     },
     {
       title: "Range Rover Sport",
       description: "Dynamic performance combined with absolute comfort.",
-      image: "/range-rover-sport.jfif"
+      image: rrSportImg
     },
     {
       title: "Mercedes-Benz G-Wagon",
       description: "Walnut Creek bespoke color finish and iconic styling.",
-      image: "/walnut-creek-gwagon.jpg"
+      image: gwagonImg
     }
   ];
 
@@ -716,8 +725,8 @@ function Contact() {
   };
 
   const socialLinks = [
-    { icon: Instagram, href: "https://www.pegasusautomotivesldh.in/url?id=10", label: "Instagram" },
-    { icon: Facebook, href: "https://www.pegasusautomotivesldh.in/url?id=11", label: "Facebook" },
+    { icon: Instagram, href: "#", label: "Instagram" },
+    { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Linkedin, href: "https://www.pegasusautomotivesldh.in/#services2", label: "LinkedIn" },
     { icon: Youtube, href: "https://www.youtube.com/@pegasusautomotives", label: "YouTube" },
   ];
