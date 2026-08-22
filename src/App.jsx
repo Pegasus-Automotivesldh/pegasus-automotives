@@ -24,15 +24,6 @@ import {
 } from "lucide-react";
 
 /* ---------------------------------------------------------------
-   IMAGE IMPORTS (Ensure these files exist in your src/assets/ folder)
---------------------------------------------------------------- */
-import bentleyImg from "./assets/bentley.jpg";
-import defenderImg from "./assets/defender.jpg";
-import rrReflectionImg from "./assets/rangerover-reflection.jpg";
-import rrSportImg from "./assets/rangerover-sport.jpg";
-import gwagonImg from "./assets/gwagon.jpg";
-
-/* ---------------------------------------------------------------
    PEGASUS AUTOMOTIVES — Brand Tokens & Global Styles
 --------------------------------------------------------------- */
 const FONT_STYLES = `
@@ -386,34 +377,34 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Using direct ES asset imports)
+   FEATURED COLLECTION (Using previous public path image references)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const collectionItems = [
     {
       title: "Bentley Continental GT",
       description: "Custom matte finish grand tourer paired with superior presence.",
-      image: bentleyImg
+      image: "/bentley.jfif"
     },
     {
       title: "Land Rover Defender",
       description: "Rugged yet refined design built for any terrain.",
-      image: defenderImg
+      image: "/defender.jfif"
     },
     {
       title: "Range Rover Reflection",
       description: "Minimalist luxury with timeless elegance and modern stance.",
-      image: rrReflectionImg
+      image: "/rangerover-reflection.jfif"
     },
     {
       title: "Range Rover Sport",
       description: "Dynamic performance combined with absolute comfort.",
-      image: rrSportImg
+      image: "/rangerover-sport.jfif"
     },
     {
       title: "Mercedes-Benz G-Wagon",
       description: "Walnut Creek bespoke color finish and iconic styling.",
-      image: gwagonImg
+      image: "/gwagon.jfif"
     }
   ];
 
