@@ -379,72 +379,6 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION GALLERY
---------------------------------------------------------------- */
-const luxuryCars = [
-  { 
-    src: "https://images.unsplash.com/photo-1631295868223-63265b40d9e4?auto=format&fit=crop&w=1200&q=80", 
-    title: "Rolls-Royce Ghost", 
-    category: "Ultra Luxury" 
-  },
-  { 
-    src: "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80", 
-    title: "BMW M Series", 
-    category: "High Performance" 
-  },
-];
-
-function LuxuryCarGallery() {
-  return (
-    <section id="gallery" className="py-24 px-6 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
-          Excellence in Motion
-        </p>
-        <h2 className="f-display text-3xl md:text-5xl font-light tracking-tight text-[#F4F2EC]">
-          Featured Collection
-        </h2>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {luxuryCars.map((car, index) => (
-          <div
-            key={index}
-            className="group relative overflow-hidden rounded-2xl border transition-all duration-500 border-[#28282C] bg-[#131315]"
-          >
-            <div className="h-96 overflow-hidden bg-[#18181B]">
-              <img
-                src={car.src}
-                alt={car.title}
-                loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-            </div>
-            <div className="p-6 flex items-center justify-between border-t border-[#28282C]">
-              <div>
-                <span className="f-mono text-[10px] uppercase tracking-widest text-[#98969E] block mb-1">
-                  {car.category}
-                </span>
-                <h3 className="f-display text-xl font-light text-[#F4F2EC]">
-                  {car.title}
-                </h3>
-              </div>
-              <a
-                href="#contact"
-                className="w-10 h-10 rounded-full border border-[#28282C] flex items-center justify-center text-[#98969E] group-hover:border-[#D8B45E] group-hover:text-[#D8B45E] transition-colors"
-                aria-label={`Inquire about ${car.title}`}
-              >
-                <ArrowUpRight size={18} />
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-/* ---------------------------------------------------------------
    PRIVATE PORTFOLIO & SHOWROOM
 --------------------------------------------------------------- */
 function Inventory() {
@@ -922,7 +856,7 @@ export default function App() {
       <Credibility />
       <Services />
       <WhyPegasus />
-      <LuxuryCarGallery />
+      <FeaturedCollection />
       <Inventory />
       <FeedbackForm />
       <Testimonials />
