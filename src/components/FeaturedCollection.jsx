@@ -1,11 +1,11 @@
 export default function FeaturedCollection() {
   const cars = [
-    { name: "Land Rover Defender", image: "/Images/defender.jpg" },
-    { name: "Mercedes-Maybach", image: "/Images/maybach.jpg" },
-    { name: "Porsche 911 Turbo S", image: "/Images/porsche-911.jpg" },
-    { name: "Range Rover Gold", image: "/Images/range-rover-gold.jpg" },
-    { name: "Range Rover Mountain Drive", image: "/Images/range-rover-mountain.jpg" },
-    { name: "Maybach Emblem", image: "/Images/maybach-emblem.jpg" },
+    { name: "Land Rover Defender", image: "/Images/cars/defender.jpg" },
+    { name: "Mercedes-Maybach", image: "/Images/cars/maybach.jpg" },
+    { name: "Porsche 911 Turbo S", image: "/Images/cars/porsche-911.jpg" },
+    { name: "Range Rover Gold", image: "/Images/cars/range-rover-gold.jpg" },
+    { name: "Range Rover Mountain Drive", image: "/Images/cars/range-rover-mountain.jpg" },
+    { name: "Maybach Emblem", image: "/Images/cars/maybach-emblem.jpg" },
   ];
 
   return (
