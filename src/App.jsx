@@ -377,34 +377,34 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Using Your Custom Uploaded Images)
+   FEATURED COLLECTION (Fixed Image Paths)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const collectionItems = [
     {
       title: "Bentley Continental GT",
       description: "Custom matte finish grand tourer paired with superior presence.",
-      image: "bentley.jpg.jpg"
+      image: "/bentley.jpg"
     },
     {
       title: "BMW X7 M60i (Larte Performance)",
       description: "Aggressive body kit enhancements combined with peerless luxury.",
-      image: "BMW X7 M60i G07 with Larte Performance body kit….jpg"
+      image: "/bmw-x7.jpg"
     },
     {
       title: "Range Rover SV (British Racing Green)",
       description: "Minimalist luxury with timeless elegance and modern stance.",
-      image: "Range Rover SV British Racing Green___.jpg"
+      image: "/range-rover-sv.jpg"
     },
     {
       title: "Range Rover Sport",
       description: "Dynamic performance combined with absolute comfort.",
-      image: "Range Rover Sport (2).jpg"
+      image: "/range-rover-sport.jpg"
     },
     {
       title: "Mercedes-AMG G-Wagon",
       description: "Bespoke custom finish and iconic cross-country capability.",
-      image: "gwagon.jpg.jpg"
+      image: "/gwagon.jpg"
     }
   ];
 
