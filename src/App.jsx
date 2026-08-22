@@ -377,29 +377,34 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Fixed with working image URLs)
+   FEATURED COLLECTION (Using your custom uploaded vehicle images)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const collectionItems = [
     {
-      title: "Porsche Custom Tuning",
-      description: "High-performance styling and bespoke interior finishing.",
-      image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80"
+      title: "Bentley Continental GT",
+      description: "Custom matte finish grand tourer paired with superior presence.",
+      image: "Bentley Continental GT, #Car Bentley Continental…_2.jfif"
+    },
+    {
+      title: "Land Rover Defender",
+      description: "Rugged yet refined design built for any terrain.",
+      image: "defender_____2.jfif"
+    },
+    {
+      title: "Range Rover Reflection",
+      description: "Minimalist luxury with timeless elegance and modern stance.",
+      image: "Range Rover Minimalist Water Reflection_2.jfif"
     },
     {
       title: "Range Rover Sport",
-      description: "Ultimate luxury combined with all-terrain capability.",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80"
+      description: "Dynamic performance combined with absolute comfort.",
+      image: "Range Rover Sport (2).jfif"
     },
     {
-      title: "Minimalist Water Reflection",
-      description: "Sleek exterior aesthetics and refined detailing.",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      title: "Custom Interior Finishes",
-      description: "Premium materials matched to your exact taste.",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80"
+      title: "Mercedes-Benz G-Wagon",
+      description: "Walnut Creek bespoke color finish and iconic styling.",
+      image: "Walnut creek colour_2.jpg"
     }
   ];
 
@@ -410,7 +415,7 @@ function FeaturedCollection() {
         <h2 className="f-display text-3xl md:text-5xl font-light">Featured Collection</h2>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {collectionItems.map((item, index) => (
           <motion.div
             key={index}
@@ -420,7 +425,7 @@ function FeaturedCollection() {
             transition={{ duration: 0.4, delay: index * 0.1 }}
             className="pa-card rounded-2xl overflow-hidden flex flex-col group"
           >
-            <div className="relative h-64 overflow-hidden bg-[#0A0A0B]">
+            <div className="relative h-72 overflow-hidden bg-[#0A0A0B]">
               <img
                 src={item.image}
                 alt={item.title}
@@ -711,9 +716,9 @@ function Contact() {
   };
 
   const socialLinks = [
-    { icon: Instagram, href: "https://www.instagram.com/pegasus_automotivs", label: "Instagram" },
-    { icon: Facebook, href: "https://www.facebook.com/PegasusAutomotives", label: "Facebook" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/pegasus-automotives", label: "LinkedIn" },
+    { icon: Instagram, href: "url?id=10", label: "Instagram" },
+    { icon: Facebook, href: "url?id=11", label: "Facebook" },
+    { icon: Linkedin, href: "https://www.pegasusautomotivesldh.in/#services2", label: "LinkedIn" },
     { icon: Youtube, href: "https://www.youtube.com/@pegasusautomotives", label: "YouTube" },
   ];
 
