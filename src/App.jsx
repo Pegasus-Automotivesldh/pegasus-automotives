@@ -377,34 +377,34 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Using your custom uploaded vehicle images)
+   FEATURED COLLECTION (Using clean public root paths)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const collectionItems = [
     {
       title: "Bentley Continental GT",
       description: "Custom matte finish grand tourer paired with superior presence.",
-      image: "Bentley Continental GT, #Car Bentley Continental…_2.jfif"
+      image: "/bentley-gt.jfif"
     },
     {
       title: "Land Rover Defender",
       description: "Rugged yet refined design built for any terrain.",
-      image: "defender_____2.jfif"
+      image: "/defender.jfif"
     },
     {
       title: "Range Rover Reflection",
       description: "Minimalist luxury with timeless elegance and modern stance.",
-      image: "Range Rover Minimalist Water Reflection_2.jfif"
+      image: "/range-rover-reflection.jfif"
     },
     {
       title: "Range Rover Sport",
       description: "Dynamic performance combined with absolute comfort.",
-      image: "Range Rover Sport (2).jfif"
+      image: "/range-rover-sport.jfif"
     },
     {
       title: "Mercedes-Benz G-Wagon",
       description: "Walnut Creek bespoke color finish and iconic styling.",
-      image: "Walnut creek colour_2.jpg"
+      image: "/walnut-creek-gwagon.jpg"
     }
   ];
 
@@ -716,8 +716,8 @@ function Contact() {
   };
 
   const socialLinks = [
-    { icon: Instagram, href: "url?id=10", label: "Instagram" },
-    { icon: Facebook, href: "url?id=11", label: "Facebook" },
+    { icon: Instagram, href: "https://www.pegasusautomotivesldh.in/url?id=10", label: "Instagram" },
+    { icon: Facebook, href: "https://www.pegasusautomotivesldh.in/url?id=11", label: "Facebook" },
     { icon: Linkedin, href: "https://www.pegasusautomotivesldh.in/#services2", label: "LinkedIn" },
     { icon: Youtube, href: "https://www.youtube.com/@pegasusautomotives", label: "YouTube" },
   ];
