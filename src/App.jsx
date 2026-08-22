@@ -377,34 +377,34 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Directly Aligned Images & Captions)
+   FEATURED COLLECTION (Using Your Custom Uploaded Images)
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const collectionItems = [
     {
       title: "Bentley Continental GT",
       description: "Custom matte finish grand tourer paired with superior presence.",
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1000&q=80"
+      image: "bentley.jpg.jpg"
     },
     {
-      title: "Land Rover Defender",
-      description: "Rugged yet refined design built for any terrain.",
-      image: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=80"
+      title: "BMW X7 M60i (Larte Performance)",
+      description: "Aggressive body kit enhancements combined with peerless luxury.",
+      image: "BMW X7 M60i G07 with Larte Performance body kit….jpg"
     },
     {
-      title: "Range Rover Reflection",
+      title: "Range Rover SV (British Racing Green)",
       description: "Minimalist luxury with timeless elegance and modern stance.",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80"
+      image: "Range Rover SV British Racing Green___.jpg"
     },
     {
       title: "Range Rover Sport",
       description: "Dynamic performance combined with absolute comfort.",
-      image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=1000&q=80"
+      image: "Range Rover Sport (2).jpg"
     },
     {
-      title: "Mercedes-Benz Maybach / G-Wagon",
-      description: "Bespoke luxury finish and iconic styling.",
-      image: "https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=1000&q=80"
+      title: "Mercedes-AMG G-Wagon",
+      description: "Bespoke custom finish and iconic cross-country capability.",
+      image: "gwagon.jpg.jpg"
     }
   ];
 
