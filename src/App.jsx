@@ -27,7 +27,7 @@ import {
    PEGASUS AUTOMOTIVES — Brand Tokens & Global Styles
 --------------------------------------------------------------- */
 const FONT_STYLES = `
-  @import url('[https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap)');
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
   .pa-root {
     --void:#0A0A0B;
@@ -580,7 +580,6 @@ function FeaturedCollection() {
                 className="inline-flex items-center text-xs font-mono tracking-widest text-neutral-300 uppercase hover:text-amber-400 transition-colors"
               >
                 Enquire
-
                 <span className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
                   ↗
                 </span>
@@ -625,12 +624,29 @@ function Inventory() {
           exclusively upon direct request.
         </p>
 
+        {/* Existing button — unchanged */}
         <a
           href="#contact"
           className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-block"
         >
           Request Confidential Catalog
         </a>
+
+        {/* NEW — Private Acquisition Desk */}
+        <div className="mt-6 pt-5 border-t border-[#28282C]">
+          <span className="f-mono text-[9px] uppercase tracking-[0.2em] text-[#6B6970] block mb-2">
+            Private Acquisition Desk
+          </span>
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@pegasusautomotivesldh.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-[#D8B45E] hover:text-[#F0DFAE] transition-colors"
+          >
+            sales@pegasusautomotivesldh.in
+          </a>
+        </div>
       </div>
     </section>
   );
@@ -657,7 +673,7 @@ function FeedbackForm() {
 
     try {
       const response = await fetch(
-        "[https://formspree.io/f/mqerlloz](https://formspree.io/f/mqerlloz)",
+        "https://formspree.io/f/mqerlloz",
         {
           method: "POST",
           headers: {
@@ -919,7 +935,7 @@ function Contact() {
 
     try {
       const response = await fetch(
-        "[https://formspree.io/f/mqerlloz](https://formspree.io/f/mqerlloz)",
+        "https://formspree.io/f/mqerlloz",
         {
           method: "POST",
           headers: {
@@ -954,22 +970,22 @@ function Contact() {
   const socialLinks = [
     {
       icon: Instagram,
-      href: "[https://www.instagram.com/pegasus\_automotivesldh](https://www.instagram.com/pegasus_automotivesldh)",
+      href: "https://www.instagram.com/pegasus_automotivesldh",
       label: "Instagram"
     },
     {
       icon: Facebook,
-      href: "[https://www.facebook.com/PegasusAutomotives](https://www.facebook.com/PegasusAutomotives)",
+      href: "https://www.facebook.com/PegasusAutomotives",
       label: "Facebook"
     },
     {
       icon: Linkedin,
-      href: "[https://www.linkedin.com/company/pegasus-automotives](https://www.linkedin.com/company/pegasus-automotives)",
+      href: "https://www.linkedin.com/company/pegasus-automotives",
       label: "LinkedIn"
     },
     {
       icon: Youtube,
-      href: "[https://www.youtube.com/@pegasusautomotives](https://www.youtube.com/@pegasusautomotives)",
+      href: "https://www.youtube.com/@pegasusautomotives",
       label: "YouTube"
     }
   ];
@@ -1036,7 +1052,7 @@ function Contact() {
 
             {/* Official Website */}
             <a
-              href="[https://www.pegasusautomotivesldh.in](https://www.pegasusautomotivesldh.in)"
+              href="https://www.pegasusautomotivesldh.in"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
