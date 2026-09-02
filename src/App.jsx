@@ -604,6 +604,22 @@ function FeaturedCollection() {
           performance marques — reach out with a specific make or model in
           mind.
         </p>
+
+        {/* Brand Support Desk */}
+        <div className="mt-6">
+          <span className="f-mono text-[9px] uppercase tracking-[0.2em] text-[#6B6970] block mb-2">
+            Brand Support Desk
+          </span>
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=support@pegasusautomotivesldh.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-[#D8B45E] hover:text-[#F0DFAE] transition-colors"
+          >
+            support@pegasusautomotivesldh.in
+          </a>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -680,7 +696,6 @@ function Inventory() {
           exclusively upon direct request.
         </p>
 
-        {/* Keep this button connected to Contact */}
         <a
           href="#contact"
           className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-block"
