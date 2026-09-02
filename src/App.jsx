@@ -41,6 +41,7 @@ const FONT_STYLES = `
     --ivory:#F4F2EC;
     --ash:#98969E;
     --ash-dim:#6B6970;
+
     background:var(--void);
     color:var(--ivory);
     font-family:'Manrope',sans-serif;
@@ -64,7 +65,12 @@ const FONT_STYLES = `
   }
 
   .pa-gold-text {
-    background:linear-gradient(120deg,var(--gold-600),var(--gold-200) 45%,var(--gold-500));
+    background:linear-gradient(
+      120deg,
+      var(--gold-600),
+      var(--gold-200) 45%,
+      var(--gold-500)
+    );
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
@@ -73,7 +79,10 @@ const FONT_STYLES = `
   .pa-card {
     background:var(--panel);
     border:1px solid var(--line);
-    transition:border-color .4s ease, transform .4s ease, box-shadow .4s ease;
+    transition:
+      border-color .4s ease,
+      transform .4s ease,
+      box-shadow .4s ease;
   }
 
   .pa-card:hover {
@@ -83,10 +92,16 @@ const FONT_STYLES = `
   }
 
   .pa-btn-gold {
-    background:linear-gradient(135deg,var(--gold-400),var(--gold-600));
+    background:linear-gradient(
+      135deg,
+      var(--gold-400),
+      var(--gold-600)
+    );
     color:#161208;
     font-weight:600;
-    transition:filter .3s ease, transform .3s ease;
+    transition:
+      filter .3s ease,
+      transform .3s ease;
   }
 
   .pa-btn-gold:hover {
@@ -97,7 +112,9 @@ const FONT_STYLES = `
   .pa-btn-ghost {
     border:1px solid var(--line);
     color:var(--ivory);
-    transition:border-color .3s ease, background .3s ease;
+    transition:
+      border-color .3s ease,
+      background .3s ease;
   }
 
   .pa-btn-ghost:hover {
@@ -126,9 +143,12 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
+
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const navLinks = [
@@ -301,10 +321,22 @@ function Hero() {
 --------------------------------------------------------------- */
 function Credibility() {
   const highlights = [
-    { title: "Precision Advisory", label: "New Factory Builds & Allocations" },
-    { title: "Private Brokerage", label: "Discreet Off-Market Transactions" },
-    { title: "Bespoke Sourcing", label: "Global Rare & Exotic Network" },
-    { title: "Concierge Care", label: "Complete Vehicle Management" }
+    {
+      title: "Precision Advisory",
+      label: "New Factory Builds & Allocations"
+    },
+    {
+      title: "Private Brokerage",
+      label: "Discreet Off-Market Transactions"
+    },
+    {
+      title: "Bespoke Sourcing",
+      label: "Global Rare & Exotic Network"
+    },
+    {
+      title: "Concierge Care",
+      label: "Complete Vehicle Management"
+    }
   ];
 
   return (
@@ -383,6 +415,22 @@ function Services() {
         <h2 className="f-display text-3xl md:text-5xl font-light">
           Advisory & Services
         </h2>
+
+        {/* Product & Service Information */}
+        <div className="mt-6">
+          <span className="f-mono text-[9px] uppercase tracking-[0.2em] text-[#6B6970] block mb-2">
+            Product & Service Information
+          </span>
+
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=info@pegasusautomotivesldh.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-[#D8B45E] hover:text-[#F0DFAE] transition-colors"
+          >
+            info@pegasusautomotivesldh.in
+          </a>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -417,7 +465,10 @@ function Services() {
                       key={idx}
                       className="flex items-center gap-2.5 text-xs text-[#F4F2EC]"
                     >
-                      <ChevronRight size={14} className="text-[#D8B45E]" />
+                      <ChevronRight
+                        size={14}
+                        className="text-[#D8B45E]"
+                      />
                       <span>{feat}</span>
                     </li>
                   ))}
@@ -478,6 +529,7 @@ function WhyPegasus() {
                   size={16}
                   className="text-[#D8B45E] shrink-0"
                 />
+
                 <span>{item}</span>
               </li>
             ))}
@@ -580,6 +632,7 @@ function FeaturedCollection() {
                 className="inline-flex items-center text-xs font-mono tracking-widest text-neutral-300 uppercase hover:text-amber-400 transition-colors"
               >
                 Enquire
+
                 <span className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
                   ↗
                 </span>
@@ -612,7 +665,10 @@ function Inventory() {
       </div>
 
       <div className="pa-card p-12 rounded-2xl text-center max-w-xl mx-auto">
-        <Sparkles size={24} className="text-[#D8B45E] mx-auto mb-4" />
+        <Sparkles
+          size={24}
+          className="text-[#D8B45E] mx-auto mb-4"
+        />
 
         <p className="text-[#F4F2EC] text-base font-medium mb-2">
           Confidential Portfolio Access
@@ -624,7 +680,7 @@ function Inventory() {
           exclusively upon direct request.
         </p>
 
-        {/* Existing button — unchanged */}
+        {/* Keep this button connected to Contact */}
         <a
           href="#contact"
           className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-block"
@@ -632,7 +688,7 @@ function Inventory() {
           Request Confidential Catalog
         </a>
 
-        {/* NEW — Private Acquisition Desk */}
+        {/* Private Acquisition Desk */}
         <div className="mt-6 pt-5 border-t border-[#28282C]">
           <span className="f-mono text-[9px] uppercase tracking-[0.2em] text-[#6B6970] block mb-2">
             Private Acquisition Desk
