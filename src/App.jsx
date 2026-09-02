@@ -27,7 +27,7 @@ import {
    PEGASUS AUTOMOTIVES — Brand Tokens & Global Styles
 --------------------------------------------------------------- */
 const FONT_STYLES = `
-  @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+  @import url('[https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap](https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap)');
 
   .pa-root {
     --void:#0A0A0B;
@@ -243,6 +243,7 @@ function Hero() {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#28282C] bg-[#131315]/80 mb-6 backdrop-blur-sm"
         >
           <Sparkles size={12} className="text-[#D8B45E]" />
+
           <span className="f-mono text-[10px] tracking-[0.25em] uppercase text-[#D8B45E]">
             Premium Automotive Advisory & Brokerage
           </span>
@@ -579,6 +580,7 @@ function FeaturedCollection() {
                 className="inline-flex items-center text-xs font-mono tracking-widest text-neutral-300 uppercase hover:text-amber-400 transition-colors"
               >
                 Enquire
+
                 <span className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
                   ↗
                 </span>
@@ -655,7 +657,7 @@ function FeedbackForm() {
 
     try {
       const response = await fetch(
-        "https://formspree.io/f/mqerlloz",
+        "[https://formspree.io/f/mqerlloz](https://formspree.io/f/mqerlloz)",
         {
           method: "POST",
           headers: {
@@ -670,11 +672,13 @@ function FeedbackForm() {
 
       if (response.ok) {
         setSubmitted(true);
+
         setFormData({
           name: "",
           email: "",
           feedback: ""
         });
+
         setRating(5);
 
         setTimeout(() => setSubmitted(false), 5000);
@@ -826,6 +830,7 @@ function FeedbackForm() {
               <span>
                 {submitting ? "Submitting..." : "Submit Feedback"}
               </span>
+
               <Send size={14} />
             </button>
           </form>
@@ -914,7 +919,7 @@ function Contact() {
 
     try {
       const response = await fetch(
-        "https://formspree.io/f/mqerlloz",
+        "[https://formspree.io/f/mqerlloz](https://formspree.io/f/mqerlloz)",
         {
           method: "POST",
           headers: {
@@ -949,22 +954,22 @@ function Contact() {
   const socialLinks = [
     {
       icon: Instagram,
-      href: "https://www.instagram.com/pegasus_automotivesldh",
+      href: "[https://www.instagram.com/pegasus\_automotivesldh](https://www.instagram.com/pegasus_automotivesldh)",
       label: "Instagram"
     },
     {
       icon: Facebook,
-      href: "https://www.facebook.com/PegasusAutomotives",
+      href: "[https://www.facebook.com/PegasusAutomotives](https://www.facebook.com/PegasusAutomotives)",
       label: "Facebook"
     },
     {
       icon: Linkedin,
-      href: "https://www.linkedin.com/company/pegasus-automotives",
+      href: "[https://www.linkedin.com/company/pegasus-automotives](https://www.linkedin.com/company/pegasus-automotives)",
       label: "LinkedIn"
     },
     {
       icon: Youtube,
-      href: "https://www.youtube.com/@pegasusautomotives",
+      href: "[https://www.youtube.com/@pegasusautomotives](https://www.youtube.com/@pegasusautomotives)",
       label: "YouTube"
     }
   ];
@@ -1009,7 +1014,9 @@ function Contact() {
 
             {/* Professional Contact Email */}
             <a
-              href="mailto:contact@pegasusautomotivesldh.in"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@pegasusautomotivesldh.in"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
             >
               <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
@@ -1029,7 +1036,7 @@ function Contact() {
 
             {/* Official Website */}
             <a
-              href="https://www.pegasusautomotivesldh.in"
+              href="[https://www.pegasusautomotivesldh.in](https://www.pegasusautomotivesldh.in)"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
