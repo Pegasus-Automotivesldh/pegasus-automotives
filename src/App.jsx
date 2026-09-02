@@ -723,7 +723,7 @@ function Contact() {
  const socialLinks = [
   {
     icon: Instagram,
-    href: "https://www.instagram.com/pegasus_automotivs",
+    href: "https://www.instagram.com/pegasus_automotives",
     label: "Instagram"
   },
   {
