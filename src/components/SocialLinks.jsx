@@ -37,8 +37,8 @@ export default function SocialLinks() {
   const socialPlatforms = [
     {
       name: "Instagram",
-      handle: "@pegasus_automotivs",
-      href: "https://www.instagram.com/pegasus_automotivs",
+      handle: "@pegasus_automotives",
+      href: "https://www.instagram.com/pegasus_automotives",
       icon: Instagram
     },
     {
