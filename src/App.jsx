@@ -720,12 +720,28 @@ function Contact() {
     }
   };
 
-  const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-  ];
+ const socialLinks = [
+  {
+    icon: Instagram,
+    href: "https://www.instagram.com/pegasus_automotivs",
+    label: "Instagram"
+  },
+  {
+    icon: Facebook,
+    href: "https://www.facebook.com/PegasusAutomotives",
+    label: "Facebook"
+  },
+  {
+    icon: Linkedin,
+    href: "https://www.linkedin.com/company/pegasus-automotives",
+    label: "LinkedIn"
+  },
+  {
+    icon: Youtube,
+    href: "https://www.youtube.com/@pegasusautomotives",
+    label: "YouTube"
+  }
+];
 
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
