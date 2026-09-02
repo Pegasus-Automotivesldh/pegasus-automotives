@@ -30,38 +30,91 @@ const FONT_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
   .pa-root {
-    --void:#0A0A0B; --panel:#131315; --panel2:#18181B; --line:#28282C;
-    --gold-600:#B4892C; --gold-500:#C9A227; --gold-400:#D8B45E; --gold-200:#F0DFAE;
-    --ivory:#F4F2EC; --ash:#98969E; --ash-dim:#6B6970;
-    background:var(--void); color:var(--ivory);
+    --void:#0A0A0B;
+    --panel:#131315;
+    --panel2:#18181B;
+    --line:#28282C;
+    --gold-600:#B4892C;
+    --gold-500:#C9A227;
+    --gold-400:#D8B45E;
+    --gold-200:#F0DFAE;
+    --ivory:#F4F2EC;
+    --ash:#98969E;
+    --ash-dim:#6B6970;
+    background:var(--void);
+    color:var(--ivory);
     font-family:'Manrope',sans-serif;
     scroll-behavior:smooth;
   }
-  .pa-root .f-display{ font-family:'Fraunces',serif; }
-  .pa-root .f-mono{ font-family:'Space Mono',monospace; letter-spacing:0.14em; }
-  
-  .pa-logo-img {
-    image-rendering: -webkit-optimize-contrast;
-    image-rendering: crisp-edges;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+
+  .pa-root .f-display {
+    font-family:'Fraunces',serif;
   }
 
-  .pa-gold-text{
+  .pa-root .f-mono {
+    font-family:'Space Mono',monospace;
+    letter-spacing:0.14em;
+  }
+
+  .pa-logo-img {
+    image-rendering:-webkit-optimize-contrast;
+    image-rendering:crisp-edges;
+    transform:translateZ(0);
+    backface-visibility:hidden;
+  }
+
+  .pa-gold-text {
     background:linear-gradient(120deg,var(--gold-600),var(--gold-200) 45%,var(--gold-500));
-    -webkit-background-clip:text; background-clip:text; color:transparent;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
   }
-  .pa-card{ background:var(--panel); border:1px solid var(--line); transition:border-color .4s ease, transform .4s ease, box-shadow .4s ease; }
-  .pa-card:hover{ border-color:var(--gold-600); transform:translateY(-4px); box-shadow:0 20px 60px -20px rgba(180,137,44,0.25); }
-  .pa-btn-gold{
+
+  .pa-card {
+    background:var(--panel);
+    border:1px solid var(--line);
+    transition:border-color .4s ease, transform .4s ease, box-shadow .4s ease;
+  }
+
+  .pa-card:hover {
+    border-color:var(--gold-600);
+    transform:translateY(-4px);
+    box-shadow:0 20px 60px -20px rgba(180,137,44,0.25);
+  }
+
+  .pa-btn-gold {
     background:linear-gradient(135deg,var(--gold-400),var(--gold-600));
-    color:#161208; font-weight:600; transition:filter .3s ease, transform .3s ease;
+    color:#161208;
+    font-weight:600;
+    transition:filter .3s ease, transform .3s ease;
   }
-  .pa-btn-gold:hover{ filter:brightness(1.12); transform:translateY(-2px); }
-  .pa-btn-ghost{ border:1px solid var(--line); color:var(--ivory); transition:border-color .3s ease, background .3s ease; }
-  .pa-btn-ghost:hover{ border-color:var(--gold-500); background:rgba(201,162,39,0.06); }
-  .pa-focus:focus{ outline:none; border-color:var(--gold-500); box-shadow:0 0 0 3px rgba(201,162,39,0.15); }
-  ::selection{ background:var(--gold-500); color:#161208; }
+
+  .pa-btn-gold:hover {
+    filter:brightness(1.12);
+    transform:translateY(-2px);
+  }
+
+  .pa-btn-ghost {
+    border:1px solid var(--line);
+    color:var(--ivory);
+    transition:border-color .3s ease, background .3s ease;
+  }
+
+  .pa-btn-ghost:hover {
+    border-color:var(--gold-500);
+    background:rgba(201,162,39,0.06);
+  }
+
+  .pa-focus:focus {
+    outline:none;
+    border-color:var(--gold-500);
+    box-shadow:0 0 0 3px rgba(201,162,39,0.15);
+  }
+
+  ::selection {
+    background:var(--gold-500);
+    color:#161208;
+  }
 `;
 
 /* ---------------------------------------------------------------
@@ -74,6 +127,7 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -84,7 +138,7 @@ function Navbar() {
     { label: "Gallery", href: "#gallery" },
     { label: "Feedback", href: "#feedback" },
     { label: "Testimonials", href: "#testimonials" },
-    { label: "Contact", href: "#contact" },
+    { label: "Contact", href: "#contact" }
   ];
 
   return (
@@ -124,7 +178,10 @@ function Navbar() {
             className="pa-btn-gold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider font-bold inline-flex items-center gap-1 group"
           >
             <span>Consult Advisor</span>
-            <ArrowUpRight size={14} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight
+              size={14}
+              className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+            />
           </a>
         </div>
 
@@ -155,6 +212,7 @@ function Navbar() {
                 {link.label}
               </a>
             ))}
+
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
@@ -197,7 +255,9 @@ function Hero() {
           className="f-display text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight mb-6 leading-tight max-w-4xl mx-auto"
         >
           Black leather, polished chrome, and the{" "}
-          <span className="pa-gold-text italic font-normal">scent of a new drive.</span>
+          <span className="pa-gold-text italic font-normal">
+            scent of a new drive.
+          </span>
         </motion.h1>
 
         <motion.p
@@ -206,7 +266,8 @@ function Hero() {
           transition={{ delay: 0.2 }}
           className="text-[#98969E] max-w-2xl mx-auto text-base sm:text-lg mb-10 font-light leading-relaxed"
         >
-          Precision luxury advisory, brand-new factory allocations, private car brokerage, and bespoke automotive asset management.
+          Precision luxury advisory, brand-new factory allocations, private
+          car brokerage, and bespoke automotive asset management.
         </motion.p>
 
         <motion.div
@@ -215,10 +276,17 @@ function Hero() {
           transition={{ delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a href="#services" className="pa-btn-gold px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold w-full sm:w-auto">
+          <a
+            href="#services"
+            className="pa-btn-gold px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold w-full sm:w-auto"
+          >
             Explore Brokerage Services
           </a>
-          <a href="#contact" className="pa-btn-ghost px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold w-full sm:w-auto">
+
+          <a
+            href="#contact"
+            className="pa-btn-ghost px-8 py-4 rounded-full text-xs uppercase tracking-widest font-bold w-full sm:w-auto"
+          >
             Book Private Consultation
           </a>
         </motion.div>
@@ -235,7 +303,7 @@ function Credibility() {
     { title: "Precision Advisory", label: "New Factory Builds & Allocations" },
     { title: "Private Brokerage", label: "Discreet Off-Market Transactions" },
     { title: "Bespoke Sourcing", label: "Global Rare & Exotic Network" },
-    { title: "Concierge Care", label: "Complete Vehicle Management" },
+    { title: "Concierge Care", label: "Complete Vehicle Management" }
   ];
 
   return (
@@ -243,8 +311,13 @@ function Credibility() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {highlights.map((item, i) => (
           <div key={i} className="flex flex-col items-center">
-            <div className="f-display text-lg sm:text-xl font-light text-[#D8B45E] mb-1">{item.title}</div>
-            <div className="f-mono text-[10px] uppercase tracking-wider text-[#98969E] max-w-[180px]">{item.label}</div>
+            <div className="f-display text-lg sm:text-xl font-light text-[#D8B45E] mb-1">
+              {item.title}
+            </div>
+
+            <div className="f-mono text-[10px] uppercase tracking-wider text-[#98969E] max-w-[180px]">
+              {item.label}
+            </div>
           </div>
         ))}
       </div>
@@ -261,38 +334,60 @@ function Services() {
       icon: Briefcase,
       title: "Luxury Advisory & Brokerage",
       desc: "Specialized advisory for brand-new luxury vehicle acquisitions, custom factory allocations, and high-value private automobile brokerage.",
-      features: ["Factory Build Slot Allocation", "Private High-Net-Worth Sales", "Market Valuation Reports"]
+      features: [
+        "Factory Build Slot Allocation",
+        "Private High-Net-Worth Sales",
+        "Market Valuation Reports"
+      ]
     },
     {
       icon: Compass,
       title: "Bespoke Exotic Sourcing",
       desc: "Leveraging our private global collector network to locate off-market, limited-edition, or hyper-specific automotive builds.",
-      features: ["Off-Market Acquisition", "Global Logistics & Import", "Custom Spec Verification"]
+      features: [
+        "Off-Market Acquisition",
+        "Global Logistics & Import",
+        "Custom Spec Verification"
+      ]
     },
     {
       icon: ShieldCheck,
       title: "Consignment & Portfolio Sales",
       desc: "Discreet, white-glove consignment services designed to achieve optimal valuation for extraordinary collector vehicles.",
-      features: ["Targeted Collector Reach", "Full Confidentiality", "Seamless Documentation"]
+      features: [
+        "Targeted Collector Reach",
+        "Full Confidentiality",
+        "Seamless Documentation"
+      ]
     },
     {
       icon: Wrench,
       title: "Multi-Point Audit & Detailing",
       desc: "Comprehensive technical audits, multi-layer ceramic paint protection, and complete restorative detailing for pristine presentation.",
-      features: ["Mechanical & Provenance Audits", "Paint Correction & Protection", "Bespoke Interior Care"]
-    },
+      features: [
+        "Mechanical & Provenance Audits",
+        "Paint Correction & Protection",
+        "Bespoke Interior Care"
+      ]
+    }
   ];
 
   return (
     <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Bespoke Solutions</p>
-        <h2 className="f-display text-3xl md:text-5xl font-light">Advisory & Services</h2>
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+          Bespoke Solutions
+        </p>
+
+        <h2 className="f-display text-3xl md:text-5xl font-light">
+          Advisory & Services
+        </h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {services.map((s, index) => {
           const Icon = s.icon;
+
           return (
             <motion.div
               key={index}
@@ -306,12 +401,21 @@ function Services() {
                 <div className="w-12 h-12 rounded-xl bg-[#28282C]/60 border border-[#28282C] flex items-center justify-center text-[#D8B45E] mb-6">
                   <Icon size={22} />
                 </div>
-                <h3 className="f-display text-2xl font-light mb-3">{s.title}</h3>
-                <p className="text-sm text-[#98969E] leading-relaxed font-light mb-6">{s.desc}</p>
-                
+
+                <h3 className="f-display text-2xl font-light mb-3">
+                  {s.title}
+                </h3>
+
+                <p className="text-sm text-[#98969E] leading-relaxed font-light mb-6">
+                  {s.desc}
+                </p>
+
                 <ul className="space-y-2.5 mb-8 border-t border-[#28282C] pt-6">
                   {s.features.map((feat, idx) => (
-                    <li key={idx} className="flex items-center gap-2.5 text-xs text-[#F4F2EC]">
+                    <li
+                      key={idx}
+                      className="flex items-center gap-2.5 text-xs text-[#F4F2EC]"
+                    >
                       <ChevronRight size={14} className="text-[#D8B45E]" />
                       <span>{feat}</span>
                     </li>
@@ -339,34 +443,62 @@ function Services() {
 --------------------------------------------------------------- */
 function WhyPegasus() {
   return (
-    <section id="why-pegasus" className="py-24 px-6 bg-[#131315] border-y border-[#28282C]">
+    <section
+      id="why-pegasus"
+      className="py-24 px-6 bg-[#131315] border-y border-[#28282C]"
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">The Pegasus Advantage</p>
-          <h2 className="f-display text-3xl md:text-5xl font-light mb-6">Uncompromising Quality & Precision</h2>
-          <p className="text-[#98969E] text-base leading-relaxed mb-6 font-light">
-            We bridge the gap between discerning collectors and extraordinary automobiles. Every advisory engagement and vehicle transaction is backed by rigorous standards of privacy and precision.
+          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+            The Pegasus Advantage
           </p>
+
+          <h2 className="f-display text-3xl md:text-5xl font-light mb-6">
+            Uncompromising Quality & Precision
+          </h2>
+
+          <p className="text-[#98969E] text-base leading-relaxed mb-6 font-light">
+            We bridge the gap between discerning collectors and extraordinary
+            automobiles. Every advisory engagement and vehicle transaction is
+            backed by rigorous standards of privacy and precision.
+          </p>
+
           <ul className="space-y-4 mb-8">
             {[
               "Brand-New Luxury Allocations & Private Brokerage",
               "Transparent Valuation & Off-Market Portfolio Access",
-              "Rigorously Verified Vehicle Provenance & History",
+              "Rigorously Verified Vehicle Provenance & History"
             ].map((item, i) => (
-              <li key={i} className="flex items-center gap-3 text-sm text-[#F4F2EC]">
-                <CheckCircle2 size={16} className="text-[#D8B45E] shrink-0" />
+              <li
+                key={i}
+                className="flex items-center gap-3 text-sm text-[#F4F2EC]"
+              >
+                <CheckCircle2
+                  size={16}
+                  className="text-[#D8B45E] shrink-0"
+                />
                 <span>{item}</span>
               </li>
             ))}
           </ul>
         </div>
+
         <div className="pa-card rounded-2xl p-8 bg-[#0A0A0B] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#D8B45E]/5 rounded-full blur-3xl pointer-events-none" />
-          <h3 className="f-display text-2xl font-light mb-4">Executive Advisory Consultation</h3>
+
+          <h3 className="f-display text-2xl font-light mb-4">
+            Executive Advisory Consultation
+          </h3>
+
           <p className="text-sm text-[#98969E] mb-6 font-light leading-relaxed">
-            Schedule a private session with an advisor to discuss brand-new allocations, custom builds, or private consignment.
+            Schedule a private session with an advisor to discuss brand-new
+            allocations, custom builds, or private consignment.
           </p>
-          <a href="#contact" className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-flex items-center gap-2">
+
+          <a
+            href="#contact"
+            className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-flex items-center gap-2"
+          >
             <span>Schedule Meeting</span>
             <ArrowUpRight size={14} />
           </a>
@@ -377,71 +509,79 @@ function WhyPegasus() {
 }
 
 /* ---------------------------------------------------------------
-   FEATURED COLLECTION (Updated with exact filenames)
+   FEATURED COLLECTION
 --------------------------------------------------------------- */
 function FeaturedCollection() {
   const categories = [
     {
       title: "British Luxury",
       description: "Range Rover, Land Rover, Bentley, Jaguar",
-      icon: "👑",
+      icon: "👑"
     },
     {
       title: "German Engineering",
       description: "Mercedes-Benz, BMW, Audi, Porsche",
-      icon: "⏱",
+      icon: "⏱"
     },
     {
       title: "Rare & Exotic",
       description: "Limited-production and specialty marques",
-      icon: "🔥",
+      icon: "🔥"
     },
     {
       title: "Electric & Hybrid Luxury",
       description: "Next-generation performance and efficiency",
-      icon: "⚡",
-    },
+      icon: "⚡"
+    }
   ];
 
   return (
     <section id="gallery" className="py-24 px-6 max-w-7xl mx-auto">
-      {/* Section Header */}
       <div className="text-center max-w-2xl mx-auto mb-16">
         <p className="text-xs uppercase tracking-[0.25em] text-amber-400/80 mb-3 f-mono">
           Featured Collection
         </p>
+
         <h2 className="text-3xl md:text-5xl font-serif mb-6 tracking-tight text-neutral-100">
           Marques We Work With
         </h2>
+
         <p className="text-neutral-400 text-sm md:text-base leading-relaxed">
-          Our advisory and brokerage work spans these categories of luxury and performance marques — reach out with a specific make or model in mind.
+          Our advisory and brokerage work spans these categories of luxury and
+          performance marques — reach out with a specific make or model in
+          mind.
         </p>
       </div>
 
-      {/* Grid Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {categories.map((cat, idx) => (
-          <div 
+          <div
             key={idx}
             className="bg-[#121212] border border-neutral-800 rounded-2xl p-8 transition-all duration-300 hover:border-amber-500/50 group flex flex-col justify-between"
           >
             <div>
-              <div className="text-2xl mb-6 text-amber-400/90">{cat.icon}</div>
+              <div className="text-2xl mb-6 text-amber-400/90">
+                {cat.icon}
+              </div>
+
               <h3 className="text-xl md:text-2xl font-serif mb-3 text-neutral-100 group-hover:text-amber-300 transition-colors">
                 {cat.title}
               </h3>
+
               <p className="text-neutral-400 text-sm md:text-base mb-8">
                 {cat.description}
               </p>
             </div>
-            
+
             <div>
-              <a 
-                href="#contact" 
+              <a
+                href="#contact"
                 className="inline-flex items-center text-xs font-mono tracking-widest text-neutral-300 uppercase hover:text-amber-400 transition-colors"
               >
-                Enquire 
-                <span className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
+                Enquire
+                <span className="ml-2 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">
+                  ↗
+                </span>
               </a>
             </div>
           </div>
@@ -450,24 +590,43 @@ function FeaturedCollection() {
     </section>
   );
 }
-  
+
 /* ---------------------------------------------------------------
    PRIVATE PORTFOLIO & SHOWROOM
 --------------------------------------------------------------- */
 function Inventory() {
   return (
-    <section id="inventory" className="py-24 px-6 max-w-7xl mx-auto border-t border-[#28282C]">
+    <section
+      id="inventory"
+      className="py-24 px-6 max-w-7xl mx-auto border-t border-[#28282C]"
+    >
       <div className="text-center mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Private Portfolio</p>
-        <h2 className="f-display text-3xl md:text-5xl font-light">Off-Market Catalog</h2>
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+          Private Portfolio
+        </p>
+
+        <h2 className="f-display text-3xl md:text-5xl font-light">
+          Off-Market Catalog
+        </h2>
       </div>
+
       <div className="pa-card p-12 rounded-2xl text-center max-w-xl mx-auto">
         <Sparkles size={24} className="text-[#D8B45E] mx-auto mb-4" />
-        <p className="text-[#F4F2EC] text-base font-medium mb-2">Confidential Portfolio Access</p>
-        <p className="text-[#98969E] text-xs font-light leading-relaxed mb-6">
-          To maintain discretion for our clients, our brand-new factory allocations and off-market brokerage listings are available exclusively upon direct request.
+
+        <p className="text-[#F4F2EC] text-base font-medium mb-2">
+          Confidential Portfolio Access
         </p>
-        <a href="#contact" className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-block">
+
+        <p className="text-[#98969E] text-xs font-light leading-relaxed mb-6">
+          To maintain discretion for our clients, our brand-new factory
+          allocations and off-market brokerage listings are available
+          exclusively upon direct request.
+        </p>
+
+        <a
+          href="#contact"
+          className="pa-btn-gold px-6 py-3 rounded-full text-xs uppercase tracking-wider font-bold inline-block"
+        >
           Request Confidential Catalog
         </a>
       </div>
@@ -483,10 +642,11 @@ function FeedbackForm() {
   const [hoverRating, setHoverRating] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    feedback: "",
+    feedback: ""
   });
 
   const handleSubmit = async (e) => {
@@ -494,22 +654,34 @@ function FeedbackForm() {
     setSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/mqerlloz", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          rating: rating,
-        }),
-      });
+      const response = await fetch(
+        "https://formspree.io/f/mqerlloz",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            ...formData,
+            rating: rating
+          })
+        }
+      );
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: "", email: "", feedback: "" });
+        setFormData({
+          name: "",
+          email: "",
+          feedback: ""
+        });
         setRating(5);
+
         setTimeout(() => setSubmitted(false), 5000);
       } else {
-        alert("There was an error submitting your feedback. Please try again.");
+        alert(
+          "There was an error submitting your feedback. Please try again."
+        );
       }
     } catch (error) {
       console.error("Error:", error);
@@ -520,11 +692,15 @@ function FeedbackForm() {
   };
 
   return (
-    <section id="feedback" className="py-24 px-6 max-w-4xl mx-auto border-t border-[#28282C]">
+    <section
+      id="feedback"
+      className="py-24 px-6 max-w-4xl mx-auto border-t border-[#28282C]"
+    >
       <div className="text-center mb-12">
         <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
           Your Opinions Matter
         </p>
+
         <h2 className="f-display text-3xl md:text-5xl font-light">
           Share Your Feedback
         </h2>
@@ -533,12 +709,18 @@ function FeedbackForm() {
       <div className="pa-card p-8 sm:p-12 rounded-2xl relative">
         {submitted ? (
           <div className="p-8 bg-[#0A0A0B] border border-[#28282C] rounded-xl text-center my-8">
-            <CheckCircle2 size={40} className="text-[#D8B45E] mx-auto mb-4" />
+            <CheckCircle2
+              size={40}
+              className="text-[#D8B45E] mx-auto mb-4"
+            />
+
             <p className="f-display text-xl text-[#F4F2EC] mb-2">
               Thank You for Your Feedback!
             </p>
+
             <p className="text-xs text-[#98969E] max-w-md mx-auto">
-              We appreciate your response. Your insights help us continuously elevate the Pegasus automotive experience.
+              We appreciate your response. Your insights help us continuously
+              elevate the Pegasus automotive experience.
             </p>
           </div>
         ) : (
@@ -548,12 +730,18 @@ function FeedbackForm() {
                 <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
                   Full Name
                 </label>
+
                 <input
                   type="text"
                   name="name"
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      name: e.target.value
+                    })
+                  }
                   placeholder="e.g. John Doe"
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
@@ -563,23 +751,29 @@ function FeedbackForm() {
                 <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
                   Email Address
                 </label>
+
                 <input
                   type="email"
                   name="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      email: e.target.value
+                    })
+                  }
                   placeholder="john@example.com"
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
               </div>
             </div>
 
-            {/* Rating Stars */}
             <div>
               <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
                 Overall Experience Rating
               </label>
+
               <div className="flex items-center gap-2">
                 {[1, 2, 3, 4, 5].map((star) => (
                   <button
@@ -607,12 +801,18 @@ function FeedbackForm() {
               <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
                 Feedback & Comments
               </label>
+
               <textarea
                 name="feedback"
                 required
                 rows={4}
                 value={formData.feedback}
-                onChange={(e) => setFormData({ ...formData, feedback: e.target.value })}
+                onChange={(e) =>
+                  setFormData({
+                    ...formData,
+                    feedback: e.target.value
+                  })
+                }
                 placeholder="Tell us about your experience with our brokerage, advisory, or showroom..."
                 className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
               />
@@ -623,7 +823,9 @@ function FeedbackForm() {
               disabled={submitting}
               className="pa-btn-gold w-full py-4 rounded-lg text-xs uppercase tracking-wider font-bold inline-flex items-center justify-center gap-2"
             >
-              <span>{submitting ? "Submitting..." : "Submit Feedback"}</span>
+              <span>
+                {submitting ? "Submitting..." : "Submit Feedback"}
+              </span>
               <Send size={14} />
             </button>
           </form>
@@ -640,15 +842,24 @@ function Testimonials() {
   const clientFeedbacks = [];
 
   return (
-    <section id="testimonials" className="py-24 px-6 bg-[#131315] border-y border-[#28282C]">
+    <section
+      id="testimonials"
+      className="py-24 px-6 bg-[#131315] border-y border-[#28282C]"
+    >
       <div className="max-w-7xl mx-auto text-center">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Client Experience</p>
-        <h2 className="f-display text-3xl md:text-5xl font-light mb-12">Client Feedback</h2>
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+          Client Experience
+        </p>
+
+        <h2 className="f-display text-3xl md:text-5xl font-light mb-12">
+          Client Feedback
+        </h2>
 
         {clientFeedbacks.length === 0 ? (
           <div className="pa-card p-10 rounded-2xl max-w-xl mx-auto">
             <p className="text-[#98969E] text-sm font-light leading-relaxed">
-              No client reviews yet. Reviews will be shared directly by verified vehicle buyers after delivery.
+              No client reviews yet. Reviews will be shared directly by
+              verified vehicle buyers after delivery.
             </p>
           </div>
         ) : (
@@ -658,13 +869,20 @@ function Testimonials() {
                 <p className="text-sm text-[#98969E] leading-relaxed mb-6 font-light italic">
                   "{feedback.quote}"
                 </p>
+
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-[#28282C] flex items-center justify-center font-bold text-xs text-[#D8B45E]">
                     {feedback.author[0]}
                   </div>
+
                   <div>
-                    <div className="text-xs font-bold text-[#F4F2EC]">{feedback.author}</div>
-                    <div className="f-mono text-[10px] text-[#98969E]">{feedback.location}</div>
+                    <div className="text-xs font-bold text-[#F4F2EC]">
+                      {feedback.author}
+                    </div>
+
+                    <div className="f-mono text-[10px] text-[#98969E]">
+                      {feedback.location}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -682,11 +900,12 @@ function Testimonials() {
 function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+
   const [contactData, setContactData] = useState({
     name: "",
     email: "",
     inquiryType: "Brand-New Luxury Build / Allocation",
-    message: "",
+    message: ""
   });
 
   const handleSubmit = async (e) => {
@@ -694,20 +913,27 @@ function Contact() {
     setSubmitting(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/mqerlloz", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(contactData),
-      });
+      const response = await fetch(
+        "https://formspree.io/f/mqerlloz",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(contactData)
+        }
+      );
 
       if (response.ok) {
         setSubmitted(true);
+
         setContactData({
           name: "",
           email: "",
           inquiryType: "Brand-New Luxury Build / Allocation",
-          message: "",
+          message: ""
         });
+
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         alert("There was an error sending your message. Please try again.");
@@ -720,40 +946,48 @@ function Contact() {
     }
   };
 
- const socialLinks = [
-  {
-    icon: Instagram,
-    href: "https://www.instagram.com/pegasus_automotivesldh",
-    label: "Instagram"
-  },
-  {
-    icon: Facebook,
-    href: "https://www.facebook.com/PegasusAutomotives",
-    label: "Facebook"
-  },
-  {
-    icon: Linkedin,
-    href: "https://www.linkedin.com/company/pegasus-automotives",
-    label: "LinkedIn"
-  },
-  {
-    icon: Youtube,
-    href: "https://www.youtube.com/@pegasusautomotives",
-    label: "YouTube"
-  }
-];
+  const socialLinks = [
+    {
+      icon: Instagram,
+      href: "https://www.instagram.com/pegasus_automotivesldh",
+      label: "Instagram"
+    },
+    {
+      icon: Facebook,
+      href: "https://www.facebook.com/PegasusAutomotives",
+      label: "Facebook"
+    },
+    {
+      icon: Linkedin,
+      href: "https://www.linkedin.com/company/pegasus-automotives",
+      label: "LinkedIn"
+    },
+    {
+      icon: Youtube,
+      href: "https://www.youtube.com/@pegasusautomotives",
+      label: "YouTube"
+    }
+  ];
 
   return (
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">Get In Touch</p>
-          <h2 className="f-display text-3xl md:text-5xl font-light mb-6">Contact Us</h2>
-          <p className="text-[#98969E] text-sm mb-8 font-light leading-relaxed">
-            Speak directly with an automotive specialist regarding new allocations, brokerage, or showroom appointments.
+          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+            Get In Touch
           </p>
-          
+
+          <h2 className="f-display text-3xl md:text-5xl font-light mb-6">
+            Contact Us
+          </h2>
+
+          <p className="text-[#98969E] text-sm mb-8 font-light leading-relaxed">
+            Speak directly with an automotive specialist regarding new
+            allocations, brokerage, or showroom appointments.
+          </p>
+
           <div className="space-y-5 mb-10">
+            {/* Direct Line */}
             <a
               href="tel:+919501462967"
               className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
@@ -761,46 +995,71 @@ function Contact() {
               <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
                 <Phone size={18} />
               </div>
+
               <div className="flex flex-col">
-                <span className="f-mono text-[10px] text-[#98969E] uppercase">Direct Line</span>
-                <span className="text-[#F4F2EC] font-medium">+91 95014 62967</span>
+                <span className="f-mono text-[10px] text-[#98969E] uppercase">
+                  Direct Line
+                </span>
+
+                <span className="text-[#F4F2EC] font-medium">
+                  +91 95014 62967
+                </span>
               </div>
             </a>
 
+            {/* Professional Contact Email */}
             <a
-              href="mailto:pegasusautomotivesldh@gmail.com"
+              href="mailto:contact@pegasusautomotivesldh.in"
               className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
             >
               <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
                 <Mail size={18} />
               </div>
+
               <div className="flex flex-col">
-                <span className="f-mono text-[10px] text-[#98969E] uppercase">Email Inquiry</span>
-                <span className="text-[#F4F2EC] font-medium">pegasusautomotivesldh@gmail.com</span>
+                <span className="f-mono text-[10px] text-[#98969E] uppercase">
+                  Email Inquiry
+                </span>
+
+                <span className="text-[#F4F2EC] font-medium">
+                  contact@pegasusautomotivesldh.in
+                </span>
               </div>
             </a>
 
+            {/* Official Website */}
             <a
               href="https://www.pegasusautomotivesldh.in"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
             >
               <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
                 <Globe size={18} />
               </div>
+
               <div className="flex flex-col">
-                <span className="f-mono text-[10px] text-[#98969E] uppercase">Official Website</span>
-                <span className="text-[#F4F2EC] font-medium">www.pegasusautomotivesldh.in</span>
+                <span className="f-mono text-[10px] text-[#98969E] uppercase">
+                  Official Website
+                </span>
+
+                <span className="text-[#F4F2EC] font-medium">
+                  www.pegasusautomotivesldh.in
+                </span>
               </div>
             </a>
 
+            {/* Location */}
             <div className="flex items-center gap-4 text-sm text-[#98969E]">
               <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] shrink-0">
                 <MapPin size={18} />
               </div>
+
               <div className="flex flex-col">
-                <span className="f-mono text-[10px] text-[#98969E] uppercase">Location</span>
+                <span className="f-mono text-[10px] text-[#98969E] uppercase">
+                  Location
+                </span>
+
                 <span className="text-[#F4F2EC] font-medium">
                   G.T. Road, Sahnewal, Ludhiana, Punjab, India 141120
                 </span>
@@ -808,17 +1067,22 @@ function Contact() {
             </div>
           </div>
 
+          {/* Social Links */}
           <div>
-            <p className="f-mono text-xs tracking-wider uppercase mb-4 text-[#98969E]">Connect With Us</p>
+            <p className="f-mono text-xs tracking-wider uppercase mb-4 text-[#98969E]">
+              Connect With Us
+            </p>
+
             <div className="flex items-center gap-3">
               {socialLinks.map((s, idx) => {
                 const Icon = s.icon;
+
                 return (
                   <a
                     key={idx}
                     href={s.href}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     aria-label={s.label}
                     className="w-11 h-11 rounded-lg border border-[#28282C] bg-[#131315] flex items-center justify-center text-[#98969E] hover:text-[#D8B45E] hover:border-[#D8B45E] transition-all"
                   >
@@ -830,49 +1094,86 @@ function Contact() {
           </div>
         </div>
 
+        {/* Consultation Form */}
         <div className="pa-card p-8 rounded-2xl relative">
-          <h3 className="f-display text-2xl font-light mb-6">Schedule Consultation</h3>
-          
+          <h3 className="f-display text-2xl font-light mb-6">
+            Schedule Consultation
+          </h3>
+
           {submitted ? (
             <div className="p-6 bg-[#0A0A0B] border border-[#28282C] rounded-xl text-center my-12">
-              <CheckCircle2 size={32} className="text-[#D8B45E] mx-auto mb-3" />
-              <p className="f-display text-lg text-[#F4F2EC] mb-1">Inquiry Received</p>
-              <p className="text-xs text-[#98969E]">Thank you for reaching out. An executive advisor will contact you shortly.</p>
+              <CheckCircle2
+                size={32}
+                className="text-[#D8B45E] mx-auto mb-3"
+              />
+
+              <p className="f-display text-lg text-[#F4F2EC] mb-1">
+                Inquiry Received
+              </p>
+
+              <p className="text-xs text-[#98969E]">
+                Thank you for reaching out. An executive advisor will contact
+                you shortly.
+              </p>
             </div>
           ) : (
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
-                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Full Name</label>
+                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
+                  Full Name
+                </label>
+
                 <input
                   type="text"
                   name="name"
                   required
                   value={contactData.name}
-                  onChange={(e) => setContactData({ ...contactData, name: e.target.value })}
+                  onChange={(e) =>
+                    setContactData({
+                      ...contactData,
+                      name: e.target.value
+                    })
+                  }
                   placeholder="e.g. John Doe"
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
               </div>
 
               <div>
-                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Email Address</label>
+                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
+                  Email Address
+                </label>
+
                 <input
                   type="email"
                   name="email"
                   required
                   value={contactData.email}
-                  onChange={(e) => setContactData({ ...contactData, email: e.target.value })}
+                  onChange={(e) =>
+                    setContactData({
+                      ...contactData,
+                      email: e.target.value
+                    })
+                  }
                   placeholder="john@example.com"
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 />
               </div>
 
               <div>
-                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Inquiry Type</label>
+                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
+                  Inquiry Type
+                </label>
+
                 <select
                   name="inquiryType"
                   value={contactData.inquiryType}
-                  onChange={(e) => setContactData({ ...contactData, inquiryType: e.target.value })}
+                  onChange={(e) =>
+                    setContactData({
+                      ...contactData,
+                      inquiryType: e.target.value
+                    })
+                  }
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
                 >
                   <option>Brand-New Luxury Build / Allocation</option>
@@ -884,12 +1185,20 @@ function Contact() {
               </div>
 
               <div>
-                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">Message or Specifications</label>
+                <label className="block f-mono text-[10px] uppercase text-[#98969E] mb-2">
+                  Message or Specifications
+                </label>
+
                 <textarea
                   name="message"
                   required
                   value={contactData.message}
-                  onChange={(e) => setContactData({ ...contactData, message: e.target.value })}
+                  onChange={(e) =>
+                    setContactData({
+                      ...contactData,
+                      message: e.target.value
+                    })
+                  }
                   placeholder="Details regarding your preferred vehicle or service requirements..."
                   rows={4}
                   className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
@@ -927,7 +1236,11 @@ function Footer() {
             />
           </div>
         </a>
-        <p>&copy; {new Date().getFullYear()} Pegasus Automotives. All rights reserved.</p>
+
+        <p>
+          &copy; {new Date().getFullYear()} Pegasus Automotives. All rights
+          reserved.
+        </p>
       </div>
     </footer>
   );
@@ -940,6 +1253,7 @@ export default function App() {
   return (
     <div className="pa-root min-h-screen w-full">
       <style>{FONT_STYLES}</style>
+
       <Navbar />
       <Hero />
       <Credibility />
