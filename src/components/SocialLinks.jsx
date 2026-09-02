@@ -104,6 +104,7 @@ export default function SocialLinks() {
                   <span className="f-mono text-[10px] uppercase text-[#6B6970] block">
                     Direct Line
                   </span>
+
                   <span className="text-sm font-medium text-[#F4F2EC] group-hover:text-[#D8B45E] transition-colors">
                     +91 95014 62967
                   </span>
@@ -123,6 +124,7 @@ export default function SocialLinks() {
                   <span className="f-mono text-[10px] uppercase text-[#6B6970] block">
                     Email Inquiries
                   </span>
+
                   <span className="text-sm font-medium text-[#F4F2EC] group-hover:text-[#D8B45E] transition-colors">
                     pegasusautomotivesldh@gmail.com
                   </span>
@@ -144,6 +146,7 @@ export default function SocialLinks() {
                   <span className="f-mono text-[10px] uppercase text-[#6B6970] block">
                     Official Website
                   </span>
+
                   <span className="text-sm font-medium text-[#F4F2EC] group-hover:text-[#D8B45E] transition-colors">
                     www.pegasusautomotivesldh.in
                   </span>
@@ -160,6 +163,7 @@ export default function SocialLinks() {
                   <span className="f-mono text-[10px] uppercase text-[#6B6970] block">
                     Showroom Location
                   </span>
+
                   <span className="text-sm text-[#F4F2EC]">
                     G.T. Road, Sahnewal, Ludhiana, Punjab 141120
                   </span>
@@ -187,7 +191,10 @@ export default function SocialLinks() {
                     className="p-3.5 rounded-xl border border-[#28282C] bg-[#18181B] hover:border-[#D8B45E] transition-all flex items-center justify-between group"
                   >
                     <div className="flex items-center gap-3">
-                      <Icon size={18} className="text-[#D8B45E]" />
+                      <Icon
+                        size={18}
+                        className="text-[#D8B45E]"
+                      />
 
                       <div className="overflow-hidden">
                         <p className="text-xs font-semibold text-[#F4F2EC]">
@@ -226,7 +233,10 @@ export default function SocialLinks() {
 
               {isSubmitted ? (
                 <div className="p-8 border border-[#D8B45E]/30 bg-[#C9A227]/5 rounded-xl text-center my-auto">
-                  <Car size={36} className="text-[#D8B45E] mx-auto mb-3" />
+                  <Car
+                    size={36}
+                    className="text-[#D8B45E] mx-auto mb-3"
+                  />
 
                   <h4 className="f-display text-xl text-[#F4F2EC] mb-2">
                     Request Received
@@ -316,11 +326,21 @@ export default function SocialLinks() {
                       }
                       className="w-full bg-[#18181B] border border-[#28282C] rounded-xl px-4 py-3 text-xs text-[#F4F2EC] pa-focus"
                     >
-                      <option>Vehicle Sourcing & Acquisition</option>
-                      <option>Factory Build Slot Allocation</option>
-                      <option>Private Vehicle Consignment</option>
-                      <option>Multi-Point Audit & Detailing</option>
-                      <option>General Advisory</option>
+                      <option>
+                        Vehicle Sourcing & Acquisition
+                      </option>
+                      <option>
+                        Factory Build Slot Allocation
+                      </option>
+                      <option>
+                        Private Vehicle Consignment
+                      </option>
+                      <option>
+                        Multi-Point Audit & Detailing
+                      </option>
+                      <option>
+                        General Advisory
+                      </option>
                     </select>
                   </div>
 
