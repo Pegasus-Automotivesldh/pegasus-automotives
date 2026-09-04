@@ -97,7 +97,7 @@ const FONT_STYLES = `
       var(--gold-400),
       var(--gold-600)
     );
-    color:#161208;
+    color:#140E0A;
     font-weight:600;
     transition:
       filter .3s ease,
@@ -177,7 +177,7 @@ const FONT_STYLES = `
 
   ::selection {
     background:var(--gold-500);
-    color:#161208;
+    color:#140E0A;
   }
 `;
 
@@ -254,7 +254,7 @@ function Navbar() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-[#F4F2EC] p-2 rounded-lg border border-[#28282C] bg-[#131315]"
+          className="md:hidden text-[#F5ECE6] p-2 rounded-lg border border-[#28282C] bg-[#131315]"
           aria-label="Toggle Menu"
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -393,7 +393,7 @@ function Credibility() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         {highlights.map((item, i) => (
           <div key={i} className="flex flex-col items-center">
-            <div className="f-display text-lg sm:text-xl font-light text-[#D8B45E] mb-1">
+            <div className="f-display text-lg sm:text-xl font-light text-[#D99A6C] mb-1">
               {item.title}
             </div>
 
@@ -457,7 +457,7 @@ function Services() {
   return (
     <section id="services" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D99A6C]">
           Bespoke Solutions
         </p>
 
@@ -475,7 +475,7 @@ function Services() {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=info@pegasusautomotivesldh.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[#D8B45E] hover:text-[#F0DFAE] transition-colors"
+            className="text-sm text-[#D99A6C] hover:text-[#F1D8C7] transition-colors"
           >
             info@pegasusautomotivesldh.in
           </a>
@@ -496,7 +496,7 @@ function Services() {
               className="pa-card p-8 rounded-2xl flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 rounded-xl bg-[#28282C]/60 border border-[#28282C] flex items-center justify-center text-[#D8B45E] mb-6">
+                <div className="w-12 h-12 rounded-xl bg-[#28282C]/60 border border-[#28282C] flex items-center justify-center text-[#D99A6C] mb-6">
                   <Icon size={22} />
                 </div>
 
@@ -512,11 +512,11 @@ function Services() {
                   {s.features.map((feat, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center gap-2.5 text-xs text-[#F4F2EC]"
+                      className="flex items-center gap-2.5 text-xs text-[#F5ECE6]"
                     >
                       <ChevronRight
                         size={14}
-                        className="text-[#D8B45E]"
+                        className="text-[#D99A6C]"
                       />
                       <span>{feat}</span>
                     </li>
@@ -526,7 +526,7 @@ function Services() {
 
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-[#D8B45E] hover:text-[#F0DFAE] transition-colors"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-wider font-bold text-[#D99A6C] hover:text-[#F1D8C7] transition-colors"
               >
                 <span>Inquire About Service</span>
                 <ArrowUpRight size={14} />
@@ -550,7 +550,7 @@ function WhyPegasus() {
     >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D99A6C]">
             The Pegasus Advantage
           </p>
 
@@ -572,11 +572,11 @@ function WhyPegasus() {
             ].map((item, i) => (
               <li
                 key={i}
-                className="flex items-center gap-3 text-sm text-[#F4F2EC]"
+                className="flex items-center gap-3 text-sm text-[#F5ECE6]"
               >
                 <CheckCircle2
                   size={16}
-                  className="text-[#D8B45E] shrink-0"
+                  className="text-[#D99A6C] shrink-0"
                 />
 
                 <span>{item}</span>
@@ -586,7 +586,7 @@ function WhyPegasus() {
         </div>
 
         <div className="pa-card rounded-2xl p-8 bg-[#0A0A0B] relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-[#D8B45E]/5 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-32 h-32 bg-[#D99A6C]/5 rounded-full blur-3xl pointer-events-none" />
 
           <h3 className="f-display text-2xl font-light mb-4">
             Executive Advisory Consultation
@@ -640,7 +640,7 @@ function FeaturedCollection() {
   return (
     <section id="gallery" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="text-center max-w-2xl mx-auto mb-16">
-        <p className="text-xs uppercase tracking-[0.25em] text-amber-400/80 mb-3 f-mono">
+        <p className="text-xs uppercase tracking-[0.25em] text-[#D99A6C]/80 mb-3 f-mono">
           Featured Collection
         </p>
 
@@ -664,7 +664,7 @@ function FeaturedCollection() {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=support@pegasusautomotivesldh.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[#D8B45E] hover:text-[#F0DFAE] transition-colors"
+            className="text-sm text-[#D99A6C] hover:text-[#F1D8C7] transition-colors"
           >
             support@pegasusautomotivesldh.in
           </a>
@@ -675,14 +675,14 @@ function FeaturedCollection() {
         {categories.map((cat, idx) => (
           <div
             key={idx}
-            className="bg-[#121212] border border-neutral-800 rounded-2xl p-8 transition-all duration-300 hover:border-amber-500/50 group flex flex-col justify-between"
+            className="bg-[#121212] border border-neutral-800 rounded-2xl p-8 transition-all duration-300 hover:border-[#B87333]/50 group flex flex-col justify-between"
           >
             <div>
-              <div className="text-2xl mb-6 text-amber-400/90">
+              <div className="text-2xl mb-6 text-[#D99A6C]/90">
                 {cat.icon}
               </div>
 
-              <h3 className="text-xl md:text-2xl font-serif mb-3 text-neutral-100 group-hover:text-amber-300 transition-colors">
+              <h3 className="text-xl md:text-2xl font-serif mb-3 text-neutral-100 group-hover:text-[#D99A6C] transition-colors">
                 {cat.title}
               </h3>
 
@@ -694,7 +694,7 @@ function FeaturedCollection() {
             <div>
               <a
                 href="#contact"
-                className="inline-flex items-center text-xs font-mono tracking-widest text-neutral-300 uppercase hover:text-amber-400 transition-colors"
+                className="inline-flex items-center text-xs font-mono tracking-widest text-neutral-300 uppercase hover:text-[#D99A6C] transition-colors"
               >
                 Enquire
 
@@ -720,7 +720,7 @@ function Inventory() {
       className="py-24 px-6 max-w-7xl mx-auto border-t border-[#28282C]"
     >
       <div className="text-center mb-16">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D99A6C]">
           Private Portfolio
         </p>
 
@@ -732,10 +732,10 @@ function Inventory() {
       <div className="pa-card p-12 rounded-2xl text-center max-w-xl mx-auto">
         <Sparkles
           size={24}
-          className="text-[#D8B45E] mx-auto mb-4"
+          className="text-[#D99A6C] mx-auto mb-4"
         />
 
-        <p className="text-[#F4F2EC] text-base font-medium mb-2">
+        <p className="text-[#F5ECE6] text-base font-medium mb-2">
           Confidential Portfolio Access
         </p>
 
@@ -762,7 +762,7 @@ function Inventory() {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=sales@pegasusautomotivesldh.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[#D8B45E] hover:text-[#F0DFAE] transition-colors"
+            className="text-sm text-[#D99A6C] hover:text-[#F1D8C7] transition-colors"
           >
             sales@pegasusautomotivesldh.in
           </a>
@@ -837,7 +837,7 @@ function FeedbackForm() {
       className="py-24 px-6 max-w-4xl mx-auto border-t border-[#28282C]"
     >
       <div className="text-center mb-12">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D99A6C]">
           Your Opinions Matter
         </p>
 
@@ -851,10 +851,10 @@ function FeedbackForm() {
           <div className="p-8 bg-[#0A0A0B] border border-[#28282C] rounded-xl text-center my-8">
             <CheckCircle2
               size={40}
-              className="text-[#D8B45E] mx-auto mb-4"
+              className="text-[#D99A6C] mx-auto mb-4"
             />
 
-            <p className="f-display text-xl text-[#F4F2EC] mb-2">
+            <p className="f-display text-xl text-[#F5ECE6] mb-2">
               Thank You for Your Feedback!
             </p>
 
@@ -883,7 +883,7 @@ function FeedbackForm() {
                     })
                   }
                   placeholder="e.g. John Doe"
-                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F5ECE6] pa-focus"
                 />
               </div>
 
@@ -904,7 +904,7 @@ function FeedbackForm() {
                     })
                   }
                   placeholder="john@example.com"
-                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F5ECE6] pa-focus"
                 />
               </div>
             </div>
@@ -928,7 +928,7 @@ function FeedbackForm() {
                       size={24}
                       className={
                         star <= (hoverRating || rating)
-                          ? "text-[#D8B45E] fill-[#D8B45E]"
+                          ? "text-[#D99A6C] fill-[#D99A6C]"
                           : "text-[#28282C]"
                       }
                     />
@@ -954,7 +954,7 @@ function FeedbackForm() {
                   })
                 }
                 placeholder="Tell us about your experience with our brokerage, advisory, or showroom..."
-                className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F5ECE6] pa-focus"
               />
             </div>
 
@@ -988,7 +988,7 @@ function Testimonials() {
       className="py-24 px-6 bg-[#131315] border-y border-[#28282C]"
     >
       <div className="max-w-7xl mx-auto text-center">
-        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+        <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D99A6C]">
           Client Experience
         </p>
 
@@ -1012,12 +1012,12 @@ function Testimonials() {
                 </p>
 
                 <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-[#28282C] flex items-center justify-center font-bold text-xs text-[#D8B45E]">
+                  <div className="w-8 h-8 rounded-full bg-[#28282C] flex items-center justify-center font-bold text-xs text-[#D99A6C]">
                     {feedback.author[0]}
                   </div>
 
                   <div>
-                    <div className="text-xs font-bold text-[#F4F2EC]">
+                    <div className="text-xs font-bold text-[#F5ECE6]">
                       {feedback.author}
                     </div>
 
@@ -1114,7 +1114,7 @@ function Contact() {
     <section id="contact" className="py-24 px-6 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D8B45E]">
+          <p className="f-mono text-xs tracking-[0.3em] uppercase mb-3 text-[#D99A6C]">
             Get In Touch
           </p>
 
@@ -1131,9 +1131,9 @@ function Contact() {
             {/* Direct Line */}
             <a
               href="tel:+919501462967"
-              className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
+              className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D99A6C] transition-colors group"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D99A6C] group-hover:border-[#D99A6C] transition-colors">
                 <Phone size={18} />
               </div>
 
@@ -1142,7 +1142,7 @@ function Contact() {
                   Direct Line
                 </span>
 
-                <span className="text-[#F4F2EC] font-medium">
+                <span className="text-[#F5ECE6] font-medium">
                   +91 95014 62967
                 </span>
               </div>
@@ -1153,9 +1153,9 @@ function Contact() {
               href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@pegasusautomotivesldh.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
+              className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D99A6C] transition-colors group"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D99A6C] group-hover:border-[#D99A6C] transition-colors">
                 <Mail size={18} />
               </div>
 
@@ -1164,7 +1164,7 @@ function Contact() {
                   Email Inquiry
                 </span>
 
-                <span className="text-[#F4F2EC] font-medium">
+                <span className="text-[#F5ECE6] font-medium">
                   contact@pegasusautomotivesldh.in
                 </span>
               </div>
@@ -1175,9 +1175,9 @@ function Contact() {
               href="https://www.pegasusautomotivesldh.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D8B45E] transition-colors group"
+              className="flex items-center gap-4 text-sm text-[#98969E] hover:text-[#D99A6C] transition-colors group"
             >
-              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] group-hover:border-[#D8B45E] transition-colors">
+              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D99A6C] group-hover:border-[#D99A6C] transition-colors">
                 <Globe size={18} />
               </div>
 
@@ -1186,7 +1186,7 @@ function Contact() {
                   Official Website
                 </span>
 
-                <span className="text-[#F4F2EC] font-medium">
+                <span className="text-[#F5ECE6] font-medium">
                   www.pegasusautomotivesldh.in
                 </span>
               </div>
@@ -1194,7 +1194,7 @@ function Contact() {
 
             {/* Location */}
             <div className="flex items-center gap-4 text-sm text-[#98969E]">
-              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D8B45E] shrink-0">
+              <div className="w-10 h-10 rounded-lg bg-[#131315] border border-[#28282C] flex items-center justify-center text-[#D99A6C] shrink-0">
                 <MapPin size={18} />
               </div>
 
@@ -1203,7 +1203,7 @@ function Contact() {
                   Location
                 </span>
 
-                <span className="text-[#F4F2EC] font-medium">
+                <span className="text-[#F5ECE6] font-medium">
                   G.T. Road, Sahnewal, Ludhiana, Punjab, India 141120
                 </span>
               </div>
@@ -1227,7 +1227,7 @@ function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
-                    className="w-11 h-11 rounded-lg border border-[#28282C] bg-[#131315] flex items-center justify-center text-[#98969E] hover:text-[#D8B45E] hover:border-[#D8B45E] transition-all"
+                    className="w-11 h-11 rounded-lg border border-[#28282C] bg-[#131315] flex items-center justify-center text-[#98969E] hover:text-[#D99A6C] hover:border-[#D99A6C] transition-all"
                   >
                     <Icon size={18} />
                   </a>
@@ -1247,10 +1247,10 @@ function Contact() {
             <div className="p-6 bg-[#0A0A0B] border border-[#28282C] rounded-xl text-center my-12">
               <CheckCircle2
                 size={32}
-                className="text-[#D8B45E] mx-auto mb-3"
+                className="text-[#D99A6C] mx-auto mb-3"
               />
 
-              <p className="f-display text-lg text-[#F4F2EC] mb-1">
+              <p className="f-display text-lg text-[#F5ECE6] mb-1">
                 Inquiry Received
               </p>
 
@@ -1278,7 +1278,7 @@ function Contact() {
                     })
                   }
                   placeholder="e.g. John Doe"
-                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F5ECE6] pa-focus"
                 />
               </div>
 
@@ -1299,7 +1299,7 @@ function Contact() {
                     })
                   }
                   placeholder="john@example.com"
-                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F5ECE6] pa-focus"
                 />
               </div>
 
@@ -1317,7 +1317,7 @@ function Contact() {
                       inquiryType: e.target.value
                     })
                   }
-                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F5ECE6] pa-focus"
                 >
                   <option>Brand-New Luxury Build / Allocation</option>
                   <option>Private Vehicle Brokerage</option>
@@ -1344,7 +1344,7 @@ function Contact() {
                   }
                   placeholder="Details regarding your preferred vehicle or service requirements..."
                   rows={4}
-                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F4F2EC] pa-focus"
+                  className="w-full bg-[#0A0A0B] border border-[#28282C] px-4 py-3 rounded-lg text-sm text-[#F5ECE6] pa-focus"
                 />
               </div>
 
@@ -1371,7 +1371,7 @@ function Footer() {
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <a href="#" className="block">
-          <div className="w-20 h-20 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D8B45E] transition-colors duration-300">
+          <div className="w-20 h-20 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D99A6C] transition-colors duration-300">
             <img
               src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
               alt="Pegasus Logo"
