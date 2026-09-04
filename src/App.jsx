@@ -270,7 +270,7 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="group block">
-          <div className="w-[300px] sm:w-[360px] lg:w-[420px] flex items-center">
+          <div className="w-[240px] sm:w-[275px] lg:w-[300px] flex items-center flex-shrink-0">
             <img
               src="/Pegasus_Logo_Square_Copper.png"
               alt="Pegasus Automotives Logo"
@@ -279,22 +279,22 @@ function Navbar() {
           </div>
         </a>
 
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-5 whitespace-nowrap">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="text-xs uppercase tracking-widest font-bold text-[#B87333] hover:text-[#D99A6C] transition-colors"
+              className="text-[11px] uppercase tracking-[0.14em] font-bold text-[#B87333] hover:text-[#D99A6C] transition-colors whitespace-nowrap"
             >
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden md:flex items-center gap-3 flex-shrink-0">
           <a
             href="#contact"
-            className="pa-btn-gold px-6 py-2.5 rounded-full text-xs uppercase tracking-wider font-bold inline-flex items-center gap-1 group"
+            className="pa-btn-gold px-5 py-2.5 rounded-full text-[11px] uppercase tracking-[0.08em] font-bold inline-flex items-center gap-1 group whitespace-nowrap"
           >
             <span>Consult Advisor</span>
             <ArrowUpRight
@@ -1422,7 +1422,7 @@ function Footer() {
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <a href="#" className="block">
-          <div className="w-[300px] sm:w-[360px] lg:w-[420px] flex items-center">
+          <div className="w-[240px] sm:w-[275px] lg:w-[300px] flex items-center flex-shrink-0">
             <img
               src="/Pegasus_Logo_Square_Copper.png"
               alt="Pegasus Logo"
