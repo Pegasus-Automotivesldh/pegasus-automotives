@@ -132,7 +132,7 @@ const FONT_STYLES = `
     position:relative;
     background:
       linear-gradient(180deg, rgba(3,3,4,0.72) 0%, rgba(3,3,4,0.28) 22%, rgba(3,3,4,0.18) 52%, rgba(3,3,4,0.42) 100%),
-      url("/Pegasus_Hero_Final.png") center 62% / cover no-repeat;
+      url("/Pegasus_Hero_Background_Clean.png") center 62% / cover no-repeat;
     background-color:#030304;
     isolation:isolate;
   }
