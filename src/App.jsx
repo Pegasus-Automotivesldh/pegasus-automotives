@@ -1371,7 +1371,7 @@ function Footer() {
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <a href="#" className="block">
-          <div className="w-20 h-20 rounded-2xl border border-[#28282C] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D99A6C] transition-colors duration-300">
+          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border border-[#B87333] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D99A6C] transition-colors duration-300">
             <img
               src="/Pegasus_Logo_Square_NavyBG_Bigger.png"
               alt="Pegasus Logo"
