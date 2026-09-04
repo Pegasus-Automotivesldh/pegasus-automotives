@@ -129,45 +129,97 @@ const FONT_STYLES = `
   }
 
   .pa-hero {
+    position:relative;
     background:
-      radial-gradient(ellipse at 50% 55%, rgba(184,115,51,0.08) 0%, transparent 42%),
-      linear-gradient(180deg, #050506 0%, #0A0A0B 55%, #050506 100%);
+      radial-gradient(
+        ellipse at 50% 42%,
+        rgba(184,115,51,0.16) 0%,
+        rgba(184,115,51,0.07) 24%,
+        transparent 55%
+      ),
+      linear-gradient(
+        180deg,
+        #030304 0%,
+        #080809 48%,
+        #0A0A0B 72%,
+        #030304 100%
+      );
+  }
+
+  .pa-hero::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background:
+      radial-gradient(
+        ellipse at 50% 35%,
+        rgba(217,154,108,0.09),
+        transparent 44%
+      );
+    z-index:1;
   }
 
   .pa-hero-leather {
     position:absolute;
-    width:120%;
-    height:78%;
-    left:-10%;
-    top:18%;
-    border:2px solid rgba(217,154,108,0.24);
+    width:118%;
+    height:82%;
+    left:-9%;
+    top:19%;
+    border:2px solid rgba(217,154,108,0.48);
     border-radius:50% 50% 48% 52%;
     transform:rotate(-7deg);
     box-shadow:
-      0 0 0 5px rgba(255,255,255,0.025),
-      0 0 35px rgba(184,115,51,0.10),
-      inset 0 0 28px rgba(0,0,0,0.85);
-    opacity:.9;
+      0 0 0 1px rgba(184,115,51,0.18),
+      0 0 25px rgba(184,115,51,0.22),
+      0 0 70px rgba(184,115,51,0.10),
+      inset 0 0 35px rgba(0,0,0,0.95);
+    opacity:1;
+    z-index:0;
+  }
+
+  .pa-hero-leather::before {
+    content:"";
+    position:absolute;
+    inset:5%;
+    border:1px solid rgba(241,216,199,0.20);
+    border-radius:inherit;
+    box-shadow:
+      inset 0 0 30px rgba(0,0,0,0.9),
+      0 0 18px rgba(217,154,108,0.06);
   }
 
   .pa-hero-leather::after {
     content:"";
     position:absolute;
-    inset:8% 2%;
-    border:1px solid rgba(217,154,108,0.12);
+    inset:12% 4%;
+    border:1px solid rgba(184,115,51,0.22);
     border-radius:inherit;
-    box-shadow:inset 0 0 35px rgba(0,0,0,0.95);
+    box-shadow:inset 0 0 45px rgba(0,0,0,0.95);
   }
 
   .pa-hero-glow {
     position:absolute;
-    width:42%;
-    height:2px;
-    top:25%;
-    left:29%;
-    background:linear-gradient(90deg, transparent, rgba(241,216,199,0.55), rgba(184,115,51,0.7), transparent);
+    width:52%;
+    height:3px;
+    top:28%;
+    left:24%;
+    background:linear-gradient(
+      90deg,
+      transparent,
+      rgba(217,154,108,0.18),
+      rgba(241,216,199,0.85),
+      rgba(184,115,51,0.95),
+      rgba(217,154,108,0.18),
+      transparent
+    );
     filter:blur(1px);
+    box-shadow:
+      0 0 15px rgba(184,115,51,0.48),
+      0 0 35px rgba(184,115,51,0.20);
     transform:rotate(-2deg);
+    opacity:1;
+    z-index:2;
   }
 
   .pa-copper-white {
@@ -218,11 +270,11 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="group block">
-          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border border-[#B87333] bg-[#0A0A0B] flex items-center justify-center p-1 group-hover:border-[#D99A6C] transition-colors duration-300 shadow-2xl">
+          <div className="w-[300px] sm:w-[360px] lg:w-[420px] flex items-center">
             <img
               src="/Pegasus_Logo_Square_Copper.png"
               alt="Pegasus Automotives Logo"
-              className="w-full h-full object-contain rounded-xl pa-logo-img group-hover:scale-105 transition-transform duration-300"
+              className="w-full h-auto object-contain pa-logo-img group-hover:scale-[1.02] transition-transform duration-300"
             />
           </div>
         </a>
@@ -301,7 +353,6 @@ function Navbar() {
 function Hero() {
   return (
     <section className="pa-hero relative min-h-screen flex items-center justify-center pt-40 pb-24 px-6 overflow-hidden">
-      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#18181B]/35 via-[#0A0A0B] to-[#050506]" />
       <div className="pa-hero-leather z-0" aria-hidden="true" />
       <div className="pa-hero-glow z-0" aria-hidden="true" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050506] to-transparent z-0" />
@@ -1371,11 +1422,11 @@ function Footer() {
     <footer className="border-t border-[#28282C] py-8 px-6 text-center text-xs text-[#98969E] bg-[#0A0A0B]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <a href="#" className="block">
-          <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border border-[#B87333] bg-[#0A0A0B] flex items-center justify-center p-1 hover:border-[#D99A6C] transition-colors duration-300">
+          <div className="w-[300px] sm:w-[360px] lg:w-[420px] flex items-center">
             <img
               src="/Pegasus_Logo_Square_Copper.png"
               alt="Pegasus Logo"
-              className="w-full h-full object-contain rounded-xl pa-logo-img"
+              className="w-full h-auto object-contain pa-logo-img"
             />
           </div>
         </a>
