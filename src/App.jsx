@@ -131,19 +131,10 @@ const FONT_STYLES = `
   .pa-hero {
     position:relative;
     background:
-      radial-gradient(
-        ellipse at 50% 42%,
-        rgba(184,115,51,0.16) 0%,
-        rgba(184,115,51,0.07) 24%,
-        transparent 55%
-      ),
-      linear-gradient(
-        180deg,
-        #030304 0%,
-        #080809 48%,
-        #0A0A0B 72%,
-        #030304 100%
-      );
+      linear-gradient(180deg, rgba(3,3,4,0.72) 0%, rgba(3,3,4,0.28) 22%, rgba(3,3,4,0.18) 52%, rgba(3,3,4,0.42) 100%),
+      url("/Pegasus_Hero_Final.png") center 62% / cover no-repeat;
+    background-color:#030304;
+    isolation:isolate;
   }
 
   .pa-hero::before {
@@ -151,75 +142,15 @@ const FONT_STYLES = `
     position:absolute;
     inset:0;
     pointer-events:none;
-    background:
-      radial-gradient(
-        ellipse at 50% 35%,
-        rgba(217,154,108,0.09),
-        transparent 44%
-      );
     z-index:1;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.78) 29%, rgba(0,0,0,0.34) 54%, transparent 76%),
+      linear-gradient(180deg, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.72) 11%, transparent 25%, transparent 78%, rgba(0,0,0,0.58) 100%);
   }
 
-  .pa-hero-leather {
-    position:absolute;
-    width:118%;
-    height:82%;
-    left:-9%;
-    top:19%;
-    border:2px solid rgba(217,154,108,0.48);
-    border-radius:50% 50% 48% 52%;
-    transform:rotate(-7deg);
-    box-shadow:
-      0 0 0 1px rgba(184,115,51,0.18),
-      0 0 25px rgba(184,115,51,0.22),
-      0 0 70px rgba(184,115,51,0.10),
-      inset 0 0 35px rgba(0,0,0,0.95);
-    opacity:1;
-    z-index:0;
-  }
-
-  .pa-hero-leather::before {
-    content:"";
-    position:absolute;
-    inset:5%;
-    border:1px solid rgba(241,216,199,0.20);
-    border-radius:inherit;
-    box-shadow:
-      inset 0 0 30px rgba(0,0,0,0.9),
-      0 0 18px rgba(217,154,108,0.06);
-  }
-
-  .pa-hero-leather::after {
-    content:"";
-    position:absolute;
-    inset:12% 4%;
-    border:1px solid rgba(184,115,51,0.22);
-    border-radius:inherit;
-    box-shadow:inset 0 0 45px rgba(0,0,0,0.95);
-  }
-
+  .pa-hero-leather,
   .pa-hero-glow {
-    position:absolute;
-    width:52%;
-    height:3px;
-    top:28%;
-    left:24%;
-    background:linear-gradient(
-      90deg,
-      transparent,
-      rgba(217,154,108,0.18),
-      rgba(241,216,199,0.85),
-      rgba(184,115,51,0.95),
-      rgba(217,154,108,0.18),
-      transparent
-    );
-    filter:blur(1px);
-    box-shadow:
-      0 0 15px rgba(184,115,51,0.48),
-      0 0 35px rgba(184,115,51,0.20);
-    transform:rotate(-2deg);
-    opacity:1;
-    z-index:2;
+    display:none;
   }
 
   .pa-copper-white {
@@ -355,7 +286,7 @@ function Hero() {
     <section className="pa-hero relative min-h-screen flex items-center justify-center pt-40 pb-24 px-6 overflow-hidden">
       <div className="pa-hero-leather z-0" aria-hidden="true" />
       <div className="pa-hero-glow z-0" aria-hidden="true" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#050506] to-transparent z-0" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#030304]/60 to-transparent z-0" />
 
       <div className="relative z-10 max-w-6xl mx-auto text-center">
         <motion.div
