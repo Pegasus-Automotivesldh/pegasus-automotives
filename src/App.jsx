@@ -41,6 +41,8 @@ const FONT_STYLES = `
     --ivory:#F3F6F8;
     --ash:#AAB7C4;
     --ash-dim:#718293;
+    --light-bg:#E5E7EB;
+    --navy-text:#06111F;
 
     background:var(--void);
     color:var(--ivory);
@@ -98,10 +100,10 @@ const FONT_STYLES = `
   .pa-btn-gold {
     background:linear-gradient(
       135deg,
-      var(--gold-400),
-      var(--gold-600)
+      #0B1B2E,
+      #06111F
     );
-    color:#06111F;
+    color:#F3F6F8;
     font-weight:600;
     transition:
       filter .3s ease,
@@ -199,8 +201,8 @@ function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#06111F]/92 backdrop-blur-md py-2 border-b border-[#294157]"
-          : "bg-transparent py-4"
+          ? "bg-[#E5E7EB]/96 backdrop-blur-md py-2 border-b border-[#AAB7C4] shadow-[0_8px_30px_rgba(6,17,31,0.08)]"
+          : "bg-[#E5E7EB]/96 backdrop-blur-md py-4 border-b border-[#D3D9E0]/80"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -219,7 +221,7 @@ function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-[11px] uppercase tracking-[0.14em] font-bold text-[#F3F6F8] hover:text-[#6FA8D0] transition-colors whitespace-nowrap"
+              className="text-[11px] uppercase tracking-[0.14em] font-bold text-[#06111F] hover:text-[#2F6F9F] transition-colors whitespace-nowrap"
             >
               {link.label}
             </a>
@@ -241,7 +243,7 @@ function Navbar() {
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-[#F3F6F8] p-2 rounded-lg border border-[#294157] bg-[#0B1B2E]"
+          className="md:hidden text-[#06111F] p-2 rounded-lg border border-[#AAB7C4] bg-[#E5E7EB]"
           aria-label="Toggle Menu"
         >
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -254,14 +256,14 @@ function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#06111F]/96 backdrop-blur-xl border-b border-[#294157] px-6 py-6 flex flex-col gap-4 overflow-hidden"
+            className="md:hidden bg-[#E5E7EB]/98 backdrop-blur-xl border-b border-[#AAB7C4] px-6 py-6 flex flex-col gap-4 overflow-hidden"
           >
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-sm font-bold tracking-wide text-[#F3F6F8] hover:text-[#6FA8D0] transition-colors"
+                className="text-sm font-bold tracking-wide text-[#06111F] hover:text-[#2F6F9F] transition-colors"
               >
                 {link.label}
               </a>
