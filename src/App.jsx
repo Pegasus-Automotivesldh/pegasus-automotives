@@ -38,7 +38,7 @@ const FONT_STYLES = `
     --gold-500:#3E80B0;
     --gold-400:#6FA8D0;
     --gold-200:#C9D7E5;
-    --ivory:#F3F6F8;
+    --ivory:#DCE5EE;
     --ash:#AAB7C4;
     --ash-dim:#718293;
     --light-bg:#E5E7EB;
@@ -83,7 +83,7 @@ const FONT_STYLES = `
   /* Keep the primary header CTA readable on the light-grey surface. */
   .pa-light-surface .pa-btn-gold,
   .pa-light-surface .pa-btn-gold span {
-    color:#F3F6F8 !important;
+    color:#DCE5EE !important;
   }
 
   .pa-gold-text {
@@ -119,7 +119,7 @@ const FONT_STYLES = `
       #0B1B2E,
       #06111F
     );
-    color:#F3F6F8;
+    color:#DCE5EE;
     font-weight:600;
     transition:
       filter .3s ease,
@@ -516,7 +516,7 @@ function Services() {
                   {s.features.map((feat, idx) => (
                     <li
                       key={idx}
-                      className="flex items-center gap-2.5 text-xs text-[#F3F6F8]"
+                      className="flex items-center gap-2.5 text-xs text-[#DCE5EE]"
                     >
                       <ChevronRight
                         size={14}
@@ -589,7 +589,7 @@ function WhyPegasus() {
           </ul>
         </div>
 
-        <div className="pa-card rounded-2xl p-8 bg-[#06111F] text-[#F3F6F8] relative overflow-hidden">
+        <div className="pa-card rounded-2xl p-8 bg-[#06111F] text-[#DCE5EE] relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-[#6FA8D0]/10 rounded-full blur-3xl pointer-events-none" />
 
           <h3 className="f-display text-2xl font-light mb-4">
@@ -739,7 +739,7 @@ function Inventory() {
           className="text-[#6FA8D0] mx-auto mb-4"
         />
 
-        <p className="text-[#F3F6F8] text-base font-medium mb-2">
+        <p className="text-[#DCE5EE] text-base font-medium mb-2">
           Confidential Portfolio Access
         </p>
 
@@ -858,7 +858,7 @@ function FeedbackForm() {
               className="text-[#6FA8D0] mx-auto mb-4"
             />
 
-            <p className="f-display text-xl text-[#F3F6F8] mb-2">
+            <p className="f-display text-xl text-[#DCE5EE] mb-2">
               Thank You for Your Feedback!
             </p>
 
@@ -887,7 +887,7 @@ function FeedbackForm() {
                     })
                   }
                   placeholder="e.g. John Doe"
-                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#F3F6F8] pa-focus"
+                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#DCE5EE] pa-focus"
                 />
               </div>
 
@@ -908,7 +908,7 @@ function FeedbackForm() {
                     })
                   }
                   placeholder="john@example.com"
-                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#F3F6F8] pa-focus"
+                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#DCE5EE] pa-focus"
                 />
               </div>
             </div>
@@ -958,7 +958,7 @@ function FeedbackForm() {
                   })
                 }
                 placeholder="Tell us about your experience with our brokerage, advisory, or showroom..."
-                className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#F3F6F8] pa-focus"
+                className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#DCE5EE] pa-focus"
               />
             </div>
 
@@ -1001,7 +1001,7 @@ function Testimonials() {
         </h2>
 
         {clientFeedbacks.length === 0 ? (
-          <div className="pa-card p-10 rounded-2xl max-w-xl mx-auto bg-[#F3F6F8] text-[#06111F] border-[#CFD6DE]">
+          <div className="pa-card p-10 rounded-2xl max-w-xl mx-auto bg-[#DCE5EE] text-[#06111F] border-[#CFD6DE]">
             <p className="text-[#4E6072] text-sm font-light leading-relaxed">
               No client reviews yet. Reviews will be shared directly by
               verified vehicle buyers after delivery.
@@ -1010,7 +1010,7 @@ function Testimonials() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
             {clientFeedbacks.map((feedback, idx) => (
-              <div key={idx} className="pa-card p-8 rounded-2xl bg-[#F3F6F8] text-[#06111F] border-[#CFD6DE]">
+              <div key={idx} className="pa-card p-8 rounded-2xl bg-[#DCE5EE] text-[#06111F] border-[#CFD6DE]">
                 <p className="text-sm text-[#4E6072] leading-relaxed mb-6 font-light italic">
                   "{feedback.quote}"
                 </p>
@@ -1146,7 +1146,7 @@ function Contact() {
                   Direct Line
                 </span>
 
-                <span className="text-[#F3F6F8] font-medium">
+                <span className="text-[#DCE5EE] font-medium">
                   +91 95014 62967
                 </span>
               </div>
@@ -1168,7 +1168,7 @@ function Contact() {
                   Email Inquiry
                 </span>
 
-                <span className="text-[#F3F6F8] font-medium">
+                <span className="text-[#DCE5EE] font-medium">
                   contact@pegasusautomotivesldh.in
                 </span>
               </div>
@@ -1190,7 +1190,7 @@ function Contact() {
                   Official Website
                 </span>
 
-                <span className="text-[#F3F6F8] font-medium">
+                <span className="text-[#DCE5EE] font-medium">
                   www.pegasusautomotivesldh.in
                 </span>
               </div>
@@ -1207,7 +1207,7 @@ function Contact() {
                   Location
                 </span>
 
-                <span className="text-[#F3F6F8] font-medium">
+                <span className="text-[#DCE5EE] font-medium">
                   G.T. Road, Sahnewal, Ludhiana, Punjab, India 141120
                 </span>
               </div>
@@ -1254,7 +1254,7 @@ function Contact() {
                 className="text-[#6FA8D0] mx-auto mb-3"
               />
 
-              <p className="f-display text-lg text-[#F3F6F8] mb-1">
+              <p className="f-display text-lg text-[#DCE5EE] mb-1">
                 Inquiry Received
               </p>
 
@@ -1282,7 +1282,7 @@ function Contact() {
                     })
                   }
                   placeholder="e.g. John Doe"
-                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#F3F6F8] pa-focus"
+                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#DCE5EE] pa-focus"
                 />
               </div>
 
@@ -1303,7 +1303,7 @@ function Contact() {
                     })
                   }
                   placeholder="john@example.com"
-                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#F3F6F8] pa-focus"
+                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#DCE5EE] pa-focus"
                 />
               </div>
 
@@ -1321,7 +1321,7 @@ function Contact() {
                       inquiryType: e.target.value
                     })
                   }
-                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#F3F6F8] pa-focus"
+                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#DCE5EE] pa-focus"
                 >
                   <option>Brand-New Luxury Build / Allocation</option>
                   <option>Private Vehicle Brokerage</option>
@@ -1348,7 +1348,7 @@ function Contact() {
                   }
                   placeholder="Details regarding your preferred vehicle or service requirements..."
                   rows={4}
-                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#F3F6F8] pa-focus"
+                  className="w-full bg-[#06111F] border border-[#294157] px-4 py-3 rounded-lg text-sm text-[#DCE5EE] pa-focus"
                 />
               </div>
 
