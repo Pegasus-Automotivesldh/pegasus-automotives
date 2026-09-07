@@ -76,9 +76,14 @@ const FONT_STYLES = `
   }
 
   .pa-light-surface a,
-  .pa-light-surface p,
-  .pa-light-surface span {
+  .pa-light-surface p {
     color:inherit;
+  }
+
+  /* Keep the primary header CTA readable on the light-grey surface. */
+  .pa-light-surface .pa-btn-gold,
+  .pa-light-surface .pa-btn-gold span {
+    color:#F3F6F8 !important;
   }
 
   .pa-gold-text {
