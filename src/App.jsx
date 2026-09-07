@@ -1356,7 +1356,7 @@ function Contact() {
 --------------------------------------------------------------- */
 function Footer() {
   return (
-    <footer className="border-t border-[#294157] py-8 px-6 text-center text-xs text-[#AAB7C4] bg-[#06111F]">
+    <footer className="border-t border-[#CFD6DE] py-8 px-6 text-center text-xs text-[#718293] bg-[#E5E7EB]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <a href="#" className="block">
           <div className="w-[220px] sm:w-[245px] lg:w-[265px] flex items-center flex-shrink-0">
