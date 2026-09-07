@@ -67,7 +67,18 @@ const FONT_STYLES = `
   }
 
   .pa-logo-navy {
-    filter:brightness(0) saturate(100%) invert(10%) sepia(29%) saturate(1307%) hue-rotate(170deg) brightness(92%) contrast(96%);
+    filter:brightness(0) saturate(100%) invert(10%) sepia(28%) saturate(1415%) hue-rotate(170deg) brightness(86%) contrast(98%);
+  }
+
+  .pa-light-surface {
+    background:#E5E7EB !important;
+    color:#06111F !important;
+  }
+
+  .pa-light-surface a,
+  .pa-light-surface p,
+  .pa-light-surface span {
+    color:inherit;
   }
 
   .pa-gold-text {
@@ -199,7 +210,7 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`pa-light-surface fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
           ? "bg-[#E5E7EB]/96 backdrop-blur-md py-2 border-b border-[#AAB7C4] shadow-[0_8px_30px_rgba(6,17,31,0.08)]"
           : "bg-[#E5E7EB]/96 backdrop-blur-md py-4 border-b border-[#D3D9E0]/80"
@@ -1356,7 +1367,7 @@ function Contact() {
 --------------------------------------------------------------- */
 function Footer() {
   return (
-    <footer className="border-t border-[#AAB7C4] py-8 px-6 text-center text-xs text-[#06111F] bg-[#E5E7EB]">
+    <footer className="pa-light-surface border-t border-[#AAB7C4] py-8 px-6 text-center text-xs bg-[#E5E7EB]">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <a href="#" className="block">
           <div className="w-[220px] sm:w-[245px] lg:w-[265px] flex items-center flex-shrink-0">
